@@ -1,4 +1,4 @@
-function drawScene(gl, programInfo, buffers) {
+function drawScene(gl, programInfo, buffers, squareRotation) {
   	gl.clearColor(0.0, 0.0, 0.0, 1.0); // Clear to black, fully opaque
   	gl.clearDepth(1.0); // Clear everything
   	gl.enable(gl.DEPTH_TEST); // Enable depth testing
@@ -45,7 +45,14 @@ function drawScene(gl, programInfo, buffers) {
   	// Tell WebGL to use our program when drawing
   	gl.useProgram(programInfo.program);
 
-  	// Set the shader uniforms
+  	mat4.rotate(
+		modelViewMatrix,
+		modelViewMatrix,
+		squareRotation,
+		[0, 0, 1]
+	);
+	
+	// Set the shader uniforms
   	gl.uniformMatrix4fv(
     	programInfo.uniformLocations.projectionMatrix,
     	false,
