@@ -28,3 +28,16 @@ function drawSc3ene(gl, programInfo, buffers) {
 	}
 }
 
+function setPositionAttribute(gl, buffers, programInfo) {
+	const numComponents = 2;
+	const type = gl.FLOAT;
+	const normalize = false;
+	const stride = 0;
+	const offset = 0;
+	
+	gl.bindBuffer(gl.ARRAY_BUFFER, buffers.position);
+	gl.vertexAttribPointer(programInfo.attribLocations.vertexPosition, numComponents, type, normalize, stride, offset);
+	gl.enableVertexAttribArray(programInfo.attribLocations.vertexPosition);
+}
+
+export { drawScene };
