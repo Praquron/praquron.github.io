@@ -130,9 +130,8 @@ function trim(audioPath, audioStart, audioEnd, originalAudioPath) {
 		
 function downloadAudio() {
 	var audioId = document.getElementById("trim_audio");
-  	var link = document.createElement('a');
 	
-	const outPath = util.outPath(audioId.src, { suffix: "-trimmed" });
+	/* const outPath = util.outPath(audioId.src, { suffix: "-trimmed" });
   	const args = ["-ss", audioId.audioProperties[audioI][1]];
   	if (audioId.rangeMethod === "specifyStopTime") {
     	args.push("-to", audioId.audioProperties[audioI][2]);
@@ -141,9 +140,10 @@ function downloadAudio() {
   	}
   	args.push("-i", audioId.src, outPath);
 
-  	await subprocess.run("ffmpeg", args);
+  	await subprocess.run("ffmpeg", args); */
 	
+	var link = document.createElement('a');
   	link.download = "audio-index(" + audioI + ").mp3";
-  	link.href = outPath;
+  	link.href = audioId.src;
   	link.click();
 }
