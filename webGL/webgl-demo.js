@@ -78,8 +78,22 @@ function main() {
   	const buffers = initBuffers(gl);
 
   	// Draw the scene
-  	drawScene(gl, programInfo, buffers);
+  	let then = 0;
+	
+	function render(now) {
+		now *= 0.001;
+		deltaTime = now - then;
+		then = now;
+		
+		drawScene(gl, programInfo, buffers, squareRotation);
+			squareRotation += deltaTime;
+		
+			requestAnimationFrame(render);
+	}
+	
+	requestAnimationFrame(render);
 }
+
 
 //
 // Initialize a shader program, so WebGL knows how to draw our data
