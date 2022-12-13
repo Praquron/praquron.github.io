@@ -1,0 +1,130 @@
+@import url(https://fonts.googleapis.com/css?family=Poor+Story);
+		
+body {
+	margin: 20px auto;
+	font-family: 'Poor Story';
+	font-weight: 300;
+	text-align: center;
+	font-size: 1rem;
+	background-color: black;
+}
+h2 {
+	color: white;
+}
+canvas {
+	margin: 20px auto;
+}
+input {
+	border: none;
+	background-color: transparent;
+	color: black;
+	font-family: 'Poor Story';
+	margin: 1rem;
+	text-align: center;
+	outline: none;
+	width: 160px;
+	height: 24px;
+	font-size: 24px;
+}
+button {
+ 	background: transparent;
+    border: transparent;
+    border-radius: 0px;
+    color: transparent;
+  	padding: 2px;
+    cursor: pointer;
+    font-family: 'Poor Story';
+}
+div.wrapper {
+    display: flex;
+    flex-direction: column;
+}
+form {
+	display: flex;
+    justify-content: center;
+}
+label {
+    margin: 0 1rem;
+    color: gray;
+}
+		
+audio::-webkit-media-controls-panel {
+	background-color: black;
+	border-radius: 0;
+}
+audio::-webkit-media-controls-play-button {
+	background-color: rgb(29,29,29);
+	border-radius: 50%;
+}
+audio::-webkit-media-controls-play-button:hover {
+	background-color: rgb(42,42,42);;
+}
+audio::-webkit-media-controls-mute-button {
+  	background-color: rgb(29,29,29);
+  	border-radius: 50%;
+}
+audio::-webkit-media-controls-mute-button:hover {
+  	background-color: rgb(42,42,42);
+}
+audio::-webkit-media-controls-current-time-display {
+	color: white;
+	font-family: 'Poor Story';
+}
+audio::-webkit-media-controls-time-remaining-display {
+	color: white;
+	font-family: 'Poor Story';
+}
+audio::-webkit-media-controls-timeline {
+	background-color: rgb(29,29,29);
+	border-radius: 25px;
+	margin-left: 8px;
+	margin-right: 8px;
+}
+audio::-webkit-media-controls-volume-slider {
+	background-color: rgb(29,29,29);
+	border-radius: 25px;
+	padding-left: 8px;
+	padding-right: 8px;
+}
+		
+.inputImage {
+    position: relative;
+    text-align: center;
+}
+.inputBox {
+    position: absolute;
+    font-family: 'Poor Story';
+    text-align: center;
+    outline: none;
+    width: 100%;
+    font-size: 24px;
+	bottom: -8px;
+}
+		
+.informationImage {
+    position: relative;
+    text-align: center;
+}
+.informationProperties {
+    position: absolute;
+	width: 600px;
+    bottom: 102px;
+    left: 50%;
+    transform: translate(-50%, 50%);
+    font-size: 20px;
+    color: black;
+}
+.informationSource {
+    position: absolute;
+	width: 600px;
+    bottom: 82px;
+    left: 50%;
+    transform: translate(-50%, 50%);
+    font-size: 16px;
+    color: black;
+}
+		
+.notice {
+	color: gray;
+	font-size: 10px;
+}
