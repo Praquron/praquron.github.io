@@ -1,5 +1,5 @@
-import { subprocess, fs } from "@jspawn/jspawn";
-import * as util from "apps-util";
+import { subprocess, fs } from "https://cdn.skypack.dev/@jspawn/jspawn@0.4.0";
+import * as util from "https://cdn.skypack.dev/apps-util";
 
 const imageSrc = ['./assets/jerry_lawson/main-sprite.png'];
 const imageSrcDisplay = ['https://google.com/logos/2022/lawson/r11292/main-sprite.png'];
