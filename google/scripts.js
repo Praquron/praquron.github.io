@@ -1,5 +1,7 @@
-/* import { subprocess, fs } from "https://cdn.skypack.dev/@jspawn/jspawn@0.4.0";
-import * as util from "https://cdn.skypack.dev/apps-util";*/
+/*
+import { subprocess, fs } from "https://cdn.skypack.dev/@jspawn/jspawn@0.4.0";
+import * as util from "https://cdn.skypack.dev/apps-util";
+*/
 
 const imageSrc = ['./assets/jerry_lawson/main-sprite.png'];
 const imageSrcDisplay = ['https://google.com/logos/2022/lawson/r11292/main-sprite.png'];
@@ -129,19 +131,23 @@ function trim(audioPath, audioStart, audioEnd, originalAudioPath) {
  }
 		
 function downloadAudio() {
-  	await subprocess.run("ffmpeg", args); */
 	var audioSrc = document.getElementById("trim_audio").src;
 	var link = document.createElement('a');
   	link.download = "audio-index(" + audioI + ").mp3";
   	link.href = audioSrc;
   	link.click();
 	
-	/* const outPath = util.outPath(audioId.src, { suffix: "-trimmed" });
-  	const args = ["-ss", audioId.audioProperties[audioI][1]];
+	/*
+	const outPath = util.outPath(audioId.src, { suffix: "-trimmed" });
+  	
+	const args = ["-ss", audioId.audioProperties[audioI][1]];
   	if (audioId.rangeMethod === "specifyStopTime") {
     	args.push("-to", audioId.audioProperties[audioI][2]);
   	} else {
     	args.push("-t", (audioId.audioProperties[audioI][2] - audioId.audioProperties[audioI][1]));
   	}
-  	args.push("-i", audioId.src, outPath); */
+  	args.push("-i", audioId.src, outPath);
+	
+	await subprocess.run("ffmpeg", args);
+	*/
 }
