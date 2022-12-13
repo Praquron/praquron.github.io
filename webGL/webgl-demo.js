@@ -1,3 +1,6 @@
+import { initBuffers } from ".init-buffers.js";
+import { drawScene } from "./draw-scene.js";
+
 main();
 			
 function main() {
@@ -34,6 +37,10 @@ function main() {
 			modelViewMatrix: gl.getUniformLocation(shaderProgram, "uModelViewMatrix"),
 		},
 	};
+	
+	const buffers = initBuffers(gl);
+	
+	drawScene(gl, programInfo, buffers);
 }
 
 function initShaderProgram(gl, vsSource, fsSource) {
