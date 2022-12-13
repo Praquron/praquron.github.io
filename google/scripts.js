@@ -129,7 +129,12 @@ function trim(audioPath, audioStart, audioEnd, originalAudioPath) {
  }
 		
 function downloadAudio() {
-	var audioId = document.getElementById("trim_audio");
+  	await subprocess.run("ffmpeg", args); */
+	var audioSrc = document.getElementById("trim_audio").src;
+	var link = document.createElement('a');
+  	link.download = "audio-index(" + audioI + ").mp3";
+  	link.href = audioSrc;
+  	link.click();
 	
 	/* const outPath = util.outPath(audioId.src, { suffix: "-trimmed" });
   	const args = ["-ss", audioId.audioProperties[audioI][1]];
@@ -138,12 +143,5 @@ function downloadAudio() {
   	} else {
     	args.push("-t", (audioId.audioProperties[audioI][2] - audioId.audioProperties[audioI][1]));
   	}
-  	args.push("-i", audioId.src, outPath);
-
-  	await subprocess.run("ffmpeg", args); */
-	
-	var link = document.createElement('a');
-  	link.download = "audio-index(" + audioI + ").mp3";
-  	link.href = audioId.src;
-  	link.click();
+  	args.push("-i", audioId.src, outPath); */
 }
