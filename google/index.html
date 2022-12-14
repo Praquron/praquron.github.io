@@ -1,6 +1,10 @@
 <!DOCTYPE html>
 <body>
-	<img src="./assets/main/title.png" alt="Title">
+	<div class="titleBackground">
+		<img src="./assets/main/title.png" alt="Title">
+		<div class="doodleName"><a id="doodleSourceAnchor"><span id="doodleSource"></span></a></div>
+		<div class="doodleDate"><span id="doodleDate"></span></div>
+	</div>
 	
 	<div><h2>Doodle Switcher</h2></div>
 	
@@ -9,6 +13,11 @@
 		<button class="nextDoodle"><img src="./assets/main/next.png" alt="Next"></button>
 	</div>
     <div><button class="loadDoodle"><img src="./assets/main/load.png" alt="Load"></button></div>
+	
+	<div class="inputBackground">
+		<img src="./assets/main/inputDoodle.png" alt="Input">
+		<div class="inputBox"><input type="number" id="doodleIndex"></div>
+	</div>
 	
 	<hr>
 	
@@ -31,8 +40,8 @@
 	
 	<div class="informationBackground">
 		<img src="./assets/main/information.png" alt="Information">
-		<div class="informationProperties">Dimensions: width: <span id="imageWidth"></span>px, height: <span id="imageHeight"></span>px | Position: x: <span id="imageX"></span>, y: <span id="imageY"></span></div>
-		<div class="informationSource">Source: <span id="imageSource"></span></div>
+		<div class="informationImageProperties">Dimensions: width: <span id="imageWidth"></span>px, height: <span id="imageHeight"></span>px | Position: x: <span id="imageX"></span>, y: <span id="imageY"></span></div>
+		<div class="informationImageSource">Source: <a id="imageSourceAnchor"><span id="imageSource"></span></a></div>
 	</div>
 	
 	<hr>
@@ -55,8 +64,8 @@
 
 		<div class="informationBackground">
 		<img src="./assets/main/information.png" alt="Information">
-		<div class="informationProperties">Start: <span id="audioStart"></span>s, End: <span id="audioEnd"></span>s, Duration: <span id="audioDuration"></span>s</div>
-		<div class="informationSource">Source: <span id="audioSource"></span></div>
+		<div class="informationAudioProperties">Start: <span id="audioStart"></span>s, End: <span id="audioEnd"></span>s, Duration: <span id="audioDuration"></span>s</div>
+            <div class="informationAudioSource">Source: <a id="audioSourceAnchor"><span id="audioSource"></span></a></div>
 	</div>
 	<div class="notice">*Download still exports the original audio.</div>
     
