@@ -10,21 +10,21 @@ const imageProperties = [[[2,1926,722,84,2],[2,0,982,172,172],[2,1926,350,98,98]
 let doodleI = 0;
 let i = 0;
 cropImg();
-trim();
+trimAudio();
 
 const previousDoodleButton = document.querySelector("button.previousDoodle");
 previousDoodleButton.addEventListener('click', function() {
 	doodleI--;
 	checkDoodleI();
 	cropImg();
-    trim();
+    trimAudio();
 });
 const nextDoodleButton = document.querySelector("button.nextDoodle");
 nextDoodleButton.addEventListener('click', function() {
 	doodleI++;
 	checkDoodleI();
 	cropImg();
-    trim();
+    trimAudio();
 });
 
 function checkDoodleI() {
