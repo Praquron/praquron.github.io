@@ -87,7 +87,7 @@ audio::-webkit-media-controls-volume-slider {
 	padding-right: 8px;
 }
 		
-.inputImage {
+.inputBackground {
     position: relative;
     text-align: center;
 }
@@ -101,7 +101,7 @@ audio::-webkit-media-controls-volume-slider {
 	bottom: -8px;
 }
 		
-.informationImage {
+.informationBackground {
     position: relative;
     text-align: center;
 }
