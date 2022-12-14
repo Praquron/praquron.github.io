@@ -85,8 +85,8 @@ function main() {
 		deltaTime = now - then;
 		then = now;
 		
-		drawScene(gl, programInfo, buffers, squareRotation);
-			squareRotation += deltaTime;
+		drawScene(gl, programInfo, buffers, cubeRotation);
+			cubeRotation += deltaTime;
 		
 			requestAnimationFrame(render);
 	}
