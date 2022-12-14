@@ -139,7 +139,7 @@ function cropImage(imagePath, newX, newY, newWidth, newHeight, originalImagePath
 function trimAudio(audioPath, audioStart, audioEnd, originalAudioPath) {
 	var trimmedAudio = `${audioPath}#t=${audioStart},${audioEnd}`;
     document.getElementById("audio").src = trimmedAudio;
-    
+   	
 	document.getElementById("audioIndex").value = audioI;
 	document.getElementById("audioStart").innerHTML = audioStart;
 	document.getElementById("audioEnd").innerHTML = audioEnd;
