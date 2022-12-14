@@ -41,6 +41,7 @@ function drawScene(gl, programInfo, buffers, squareRotation) {
   	// buffer into the vertexPosition attribute.
   	setPositionAttribute(gl, buffers, programInfo);
 	setColorAttribute(gl, buffers, programInfo);
+	gl.bindBuffer(gl.ELEMENT_ARRAy_BUFFER, buffers.indices);
 
   	// Tell WebGL to use our program when drawing
   	gl.useProgram(programInfo.program);
@@ -65,9 +66,10 @@ function drawScene(gl, programInfo, buffers, squareRotation) {
   	);
 
   	{
-    	const offset = 0;
-    	const vertexCount = 4;
-    	gl.drawArrays(gl.TRIANGLE_STRIP, offset, vertexCount);
+   		const vertexCount = 36;
+		const type = gl.UNSIGNED_SHORT;
+		const offset = 0;
+		gl.drawElements(gl.TRIANGLES, vertexCount, type, offset);
   	}
 }
 
