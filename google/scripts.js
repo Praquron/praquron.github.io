@@ -145,7 +145,7 @@ function trimAudio() {
 }
 		
 function trim(audioPath, audioStart, audioEnd, originalAudioPath) {
-	var trimmedAudio = `${audioPath}#t=${audioStart},${audioEnd}`;
+	var trimmedAudio = `${audioPath}#t=${audioStart},${audioEnd}`
        		
 	document.getElementById("audioIndex").value = audioI;
 	document.getElementById("trim_audio").src = trimmedAudio;
