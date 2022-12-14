@@ -1,4 +1,4 @@
-function drawScene(gl, programInfo, buffers, squareRotation) {
+function drawScene(gl, programInfo, buffers, cubeRotation) {
   	gl.clearColor(0.0, 0.0, 0.0, 1.0); // Clear to black, fully opaque
   	gl.clearDepth(1.0); // Clear everything
   	gl.enable(gl.DEPTH_TEST); // Enable depth testing
@@ -49,8 +49,20 @@ function drawScene(gl, programInfo, buffers, squareRotation) {
   	mat4.rotate(
 		modelViewMatrix,
 		modelViewMatrix,
-		squareRotation,
+		cubeRotation,
 		[0, 0, 1]
+	);
+	mat4.rotate(
+		modelViewMatrix,
+		modelViewMatrix,
+		cubeRotation * 0.7,
+		[0, 1, 0]
+	);
+	mat4.rotate(
+		modelViewMatrix,
+		modelViewMatrix,
+		cubeRotation * 0.3,
+		[1, 0, 0]
 	);
 	
 	// Set the shader uniforms
