@@ -1,5 +1,5 @@
 const doodleName = ['Halloween 2022','Gerald "Jerry" Lawson\'s 82nd Birthday'];
-const doodleSource = ['https://google.com/doodles/hallwoeen-2022','https://www.google.com/doodles/gerald-jerry-lawsons-82nd-birthday'];
+const doodleSource = ['https://google.com/doodles/halloween-2022','https://www.google.com/doodles/gerald-jerry-lawsons-82nd-birthday'];
 const doodleDate = ['30 October 2022','1 December 2022'];
 
 const imageSource = [['./assets/great_ghoul_duel/main-sprite.png', './assets/great_ghoul_duel/hats-sprite.png', './assets/great_ghoul_duel/achievements-sprite.png', './assets/great_ghoul_duel/tutorial-sprite.png', './assets/great_ghoul_duel/alpha-sprite.png', './assets/great_ghoul_duel/bravo-sprite.png', './assets/great_ghoul_duel/desktop-sprite.png', './assets/great_ghoul_duel/initial-sprite.png', './assets/great_ghoul_duel/mobile-sprite.png', './assets/great_ghoul_duel/dogfood-sprite.png'], ['./assets/jerry_lawson/main-sprite.png']];
