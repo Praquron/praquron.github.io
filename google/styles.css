@@ -100,12 +100,35 @@ audio::-webkit-media-controls-volume-slider {
     font-size: 24px;
 	bottom: -8px;
 }
-		
+
+.titleBackground {
+	position: relative;
+    text-align: center;
+}
+.doodleName {
+	position: absolute;
+	width: 300px;
+    bottom: 46px;
+    left: 50%;
+    transform: translate(-50%, 50%);
+    font-size: 20px;
+    color: black;
+}
+.doodleDate {
+	position: absolute;
+	width: 300px;
+    bottom: 26px;
+    left: 50%;
+    transform: translate(-50%, 50%);
+    font-size: 16px;
+    color: black;
+}
+
 .informationBackground {
     position: relative;
     text-align: center;
 }
-.informationProperties {
+.informationImageProperties {
     position: absolute;
 	width: 600px;
     bottom: 102px;
@@ -114,7 +137,26 @@ audio::-webkit-media-controls-volume-slider {
     font-size: 20px;
     color: black;
 }
-.informationSource {
+.informationImageSource {
+    position: absolute;
+	width: 600px;
+    bottom: 82px;
+    left: 50%;
+    transform: translate(-50%, 50%);
+    font-size: 16px;
+    color: black;
+}
+
+.informationAudioProperties {
+    position: absolute;
+	width: 600px;
+    bottom: 102px;
+    left: 50%;
+    transform: translate(-50%, 50%);
+    font-size: 16px;
+    color: black;
+}
+.informationAudioSource {
     position: absolute;
 	width: 600px;
     bottom: 82px;
