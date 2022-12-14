@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<body>
+	<img src="./assets/main/title.png" alt="Title">
+	
+	<div><h2>Doodle Switcher</h2></div>
+	
+	<div>
+		<button class="previousDoodle"><img src="./assets/main/previous.png" alt="Previous"></button>
+		<button class="nextDoodle"><img src="./assets/main/next.png" alt="Next"></button>
+	</div>
+    <div><button class="loadDoodle"><img src="./assets/main/load.png" alt="Load"></button></div>
+	
+	<hr>
+	
+	<div><h2>Images</h2></div>
+	
+	<div>
+		<button class="previousImage"><img src="./assets/main/previous.png" alt="Previous"></button>
+		<button class="nextImage"><img src="./assets/main/next.png" alt="Next"></button>
+	</div>
+	<div>
+		<button class="loadImage"><img src="./assets/main/load.png" alt="Load"></button>
+		<button class="downloadImage"><img src="./assets/main/downloadImage.png" alt="Download"></button>
+	</div>
+	<div class="inputBackground">
+		<img src="./assets/main/inputDoodle.png" alt="Input">
+		<div class="inputBox"><input type="number" id="doodleIndex"></div>
+	</div>
+	
+	<canvas id="image"></canvas>
+	
+	<div class="informationBackground">
+		<img src="./assets/main/information.png" alt="Information">
+		<div class="informationProperties">Dimensions: width: <span id="imageWidth"></span>px, height: <span id="imageHeight"></span>px | Position: x: <span id="imageX"></span>, y: <span id="imageY"></span></div>
+		<div class="informationSource">Source: <span id="imageSource"></span></div>
+	</div>
+	
+	<hr>
+	
+	<div><h2>Audio</h2></div>
+	
+	<div>
+		<button class="previousAudio"><img src="./assets/main/previous.png" alt="Previous"></button>
+		<button class="nextAudio"><img src="./assets/main/next.png" alt="Next"></button>
+	</div>
+	<button class="loadAudio"><img src="./assets/main/load.png" alt="Load"></button>
+	<button class="downloadAudio"><img src="./assets/main/downloadAudio.png" alt="Download*"></button>
+	
+	<div class="inputBackground">
+		<img src="./assets/main/inputAudio.png" alt="Input">
+		<div class="inputBox"><input type="number" id="audioIndex"></div>
+	</div>
+	
+		<audio id="audio" preload="auto" controls controlsList="nodownload noplaybackrate" autoplay></audio>
+
+		<div class="informationBackground">
+		<img src="./assets/main/information.png" alt="Information">
+		<div class="informationProperties">Start: <span id="audioStart"></span>s, End: <span id="audioEnd"></span>s, Duration: <span id="audioDuration"></span>s</div>
+		<div class="informationSource">Source: <span id="audioSource"></span></div>
+	</div>
+	<div class="notice">*Download still exports the original audio.</div>
+	
+	<link rel="stylesheet" href="styles.css">
+	<script src="scripts.js"></script>
+</body>
