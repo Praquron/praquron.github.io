@@ -117,7 +117,7 @@ function cropImage(imagePath, newX, newY, newWidth, newHeight, originalImagePath
     	canvas.height = newHeight;
     	ctx.drawImage(originalImage, newX, newY, newWidth, newHeight, 0, 0, newWidth, newHeight);
 				
-    	document.getElementById("imageIndex").value = i;
+    	document.getElementById("imageIndex").value = imageI;
     	document.getElementById("imageWidth").innerHTML = newWidth;
     	document.getElementById("imageHeight").innerHTML = newHeight;
     	document.getElementById("imageX").innerHTML = newX;
