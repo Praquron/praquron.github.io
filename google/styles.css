@@ -49,7 +49,7 @@ label {
 }
 		
 audio::-webkit-media-controls-panel {
-	background-color: transparent;
+	background-color: black;
 	border-radius: 0;
 }
 audio::-webkit-media-controls-play-button {
