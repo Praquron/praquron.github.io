@@ -100,7 +100,7 @@ function trim(change) {
 	audioI = Math.floor(document.getElementById("audioIndex").value);
     checkAudioI(change);
     document.getElementById("audioIndex").value = audioI;
-    trimAudio(audioSrc[doodleI][audioProperties[doodleI][audioI][0]], audioProperties[doodleI][audioI][1], audioProperties[doodleI][audioI][2], audioSrcDisplay[doodleI][audioProperties[doodleI][audioI][0]]);
+    trimAudio(audioSource[doodleI][audioProperties[doodleI][audioI][0]], audioProperties[doodleI][audioI][1], audioProperties[doodleI][audioI][2], audioOriginalSource[doodleI][audioProperties[doodleI][audioI][0]]);
 }
 
 function cropImage(imagePath, newX, newY, newWidth, newHeight, originalImagePath) {
