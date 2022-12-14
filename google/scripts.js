@@ -86,9 +86,7 @@ function checkAudioI(change) {
 }
 
 function load(change) {
-    doodleI = Math.floor(document.getElementById("doodleIndex").value);
     checkDoodleI(change);
-    document.getElementById("doodleIndex").value = doodleI;
     crop(0);
     trim(0);
 }
