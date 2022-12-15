@@ -49,6 +49,26 @@ label {
     margin: 0 1rem;
     color: gray;
 }
+
+a:link {
+  	color: blue;
+  	background-color: transparent;
+  	text-decoration: none;
+}
+a:visited {
+	color: indigo;
+  	background-color: transparent;
+  	text-decoration: none;
+}
+a:hover {
+  	background-color: transparent;
+  	text-decoration: underline;
+}
+a:active {
+	color: red;
+ 	background-color: transparent;
+  	text-decoration: underline;
+}
 		
 audio::-webkit-media-controls-panel {
 	border-radius: 0;
