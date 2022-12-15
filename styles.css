@@ -35,6 +35,26 @@ hr {
 	border-color: white;
 }
 
+a:link {
+  	color: blue;
+  	background-color: transparent;
+  	text-decoration: none;
+}
+a:visited {
+	color: indigo;
+  	background-color: transparent;
+  	text-decoration: none;
+}
+a:hover {
+  	background-color: transparent;
+  	text-decoration: underline;
+}
+a:active {
+	color: red;
+ 	background-color: transparent;
+  	text-decoration: underline;
+}
+
 @media (orientation: landscape) {
 	.social {
 		display: flex;
