@@ -29,10 +29,14 @@ video {
 	max-width: 100%;
 }
 
+hr {
+	border-top: 6px;
+	margin: 16px;
+}
+
 .social {
 	display: flex;
 	flex-direction: row;
-	margin-left: auto;
-	margin-right: auto;
+	margin: 8px;
 	width: 50%;
 }
