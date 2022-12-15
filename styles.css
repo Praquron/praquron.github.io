@@ -31,12 +31,12 @@ video {
 
 hr {
 	border-top: 6px;
-	margin: 16px;
+	padding: 16px;
 }
 
 .social {
 	display: flex;
 	flex-direction: row;
-	margin: 8px;
+	padding: 8px;
 	width: 50%;
 }
