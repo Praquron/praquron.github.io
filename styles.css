@@ -9,7 +9,6 @@
 * {
 	margin: 0;
 	padding: 0;
-	border: 0;
 	text-align: center;
 	font-family: "Poor Story";
 }
@@ -31,8 +30,8 @@ video {
 }
 
 hr {
+	margin: 16px;
 	border-top: 6px;
-	padding: 16px;
 	border-color: white;
 }
 
