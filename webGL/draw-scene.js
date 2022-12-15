@@ -1,4 +1,4 @@
-function drawScene(gl, programInfo, buffers, cubeRotation) {
+function drawScene(gl, programInfo, buffers, texture, cubeRotation) {
   	gl.clearColor(0.0, 0.0, 0.0, 1.0); // Clear to black, fully opaque
   	gl.clearDepth(1.0); // Clear everything
   	gl.enable(gl.DEPTH_TEST); // Enable depth testing
@@ -40,7 +40,7 @@ function drawScene(gl, programInfo, buffers, cubeRotation) {
   	// Tell WebGL how to pull out the positions from the position
   	// buffer into the vertexPosition attribute.
   	setPositionAttribute(gl, buffers, programInfo);
-	setColorAttribute(gl, buffers, programInfo);
+	setTextureAttribute(gl, buffers, programInfo);
 	gl.bindBuffer(gl.ELEMENT_ARRAy_BUFFER, buffers.indices);
 
   	// Tell WebGL to use our program when drawing
@@ -76,6 +76,10 @@ function drawScene(gl, programInfo, buffers, cubeRotation) {
     	false,
     	modelViewMatrix
   	);
+	
+	gl.activeTexture(gl.TEXTURE0);
+	gl.bindTexture(gl.TEXTURE_2D, texture);
+	gl.uniform1i(programInfo.uniformLocations.uSampler, 0);
 
   	{
    		const vertexCount = 36;
@@ -83,6 +87,25 @@ function drawScene(gl, programInfo, buffers, cubeRotation) {
 		const offset = 0;
 		gl.drawElements(gl.TRIANGLES, vertexCount, type, offset);
   	}
+	
+	function setTextureAttribute(gl, buffers, programInfo) {
+		const num= = 2;
+		const type = gl.FLOAT;
+		const normalize = false;
+		const stride = 0;
+		const offset = 0;
+		gl.bindBuffer(gl.ARRAY_BUFFER, buffers.textureCoord);
+		gl.vertexAttribPointer(
+			programInfo.attribLocations.textureCoord,
+			num,
+			type,
+			normalize,
+			stride,
+			offset
+		);
+		
+		gl.enableVertexAttribArray(programInfo.attribLocations.textureCoord);
+	}
 }
 
 // Tell WebGL how to pull out the positions from the position
