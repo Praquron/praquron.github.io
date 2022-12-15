@@ -35,6 +35,7 @@ video {
 }
 
 .social {
+	display: row;
 	margin-left: auto;
 	margin-right: auto;
 	width: 50%;
