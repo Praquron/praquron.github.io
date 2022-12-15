@@ -23,7 +23,7 @@ body {
 }
 
 h2 {
-	font-weight: bold;
+	font-weight: 700;
 }
 
 img,
@@ -32,6 +32,9 @@ svg,
 video {
 	display: block;
 	max-width: 100%;
+}
+
+.social {
 	margin-left: auto;
 	margin-right: auto;
 	width: 50%;
