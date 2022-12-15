@@ -1,12 +1,14 @@
 @import url(https://fonts.googleapis.com/css?family=Poor+Story);
 		
+html {
+	color-scheme: dark;
+}
 body {
 	margin: 20px auto;
 	font-family: 'Poor Story';
 	font-weight: 300;
 	text-align: center;
 	font-size: 1rem;
-	background-color: black;
 }
 h2 {
 	color: white;
@@ -49,22 +51,20 @@ label {
 }
 		
 audio::-webkit-media-controls-panel {
-	background-color: black;
 	border-radius: 0;
+	background-color: rgb(29,29,29);
 }
 audio::-webkit-media-controls-play-button {
-	background-color: rgb(29,29,29);
 	border-radius: 50%;
 }
 audio::-webkit-media-controls-play-button:hover {
-	background-color: rgb(42,42,42);;
+	background-color: rgb(38,38,38);;
 }
 audio::-webkit-media-controls-mute-button {
-  	background-color: rgb(29,29,29);
-  	border-radius: 50%;
+  	border-radius: 25px;
 }
 audio::-webkit-media-controls-mute-button:hover {
-  	background-color: rgb(42,42,42);
+  	background-color: rgb(38,38,38);
 }
 audio::-webkit-media-controls-current-time-display {
 	color: white;
@@ -75,16 +75,12 @@ audio::-webkit-media-controls-time-remaining-display {
 	font-family: 'Poor Story';
 }
 audio::-webkit-media-controls-timeline {
-	background-color: rgb(29,29,29);
-	border-radius: 25px;
 	margin-left: 8px;
 	margin-right: 8px;
 }
 audio::-webkit-media-controls-volume-slider {
-	background-color: rgb(29,29,29);
-	border-radius: 25px;
-	padding-left: 8px;
-	padding-right: 8px;
+	background-color: rgb(38,38,38);
+  	border-radius: 25px;
 }
 		
 .inputBackground {
