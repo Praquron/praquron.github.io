@@ -1,4 +1,5 @@
-### This is an experiment on WebGL that I am trying to do
-[Click here](https://praquron.github.io/webGL/) if you want to see it.
+## WebGL Experiment
+#### I am currently doing a WebGL experiment.
 
-[Tutorial Link](https://developer.mozilla.org/en-US/docs/Web/API/WebGL_API/Tutorial)
+I followed this [tutorial](https://developer.mozilla.org/en-US/docs/Web/API/WebGL_API/Tutorial).
+[Click here](https://praquron.github.io/webGL/) if you want to see it.
