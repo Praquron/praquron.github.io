@@ -10,7 +10,6 @@
 	margin: 0;
 	padding: 0;
 	text-align: center;
-	font: inherit;
 	font-family: "Poor Story";
 }
 
@@ -20,10 +19,6 @@ html {
 
 body {
 	min-height: 100vh;
-}
-
-h2 {
-	font-weight: 700;
 }
 
 img,
