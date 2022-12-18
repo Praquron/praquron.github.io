@@ -124,7 +124,7 @@ audio::-webkit-media-controls-volume-slider {
 .doodleName {
 	position: absolute;
 	width: 300px;
-    bottom: 46px;
+    bottom: 54px;
     left: 50%;
     transform: translate(-50%, 50%);
     font-size: 20px;
@@ -133,10 +133,19 @@ audio::-webkit-media-controls-volume-slider {
 .doodleDate {
 	position: absolute;
 	width: 300px;
-    bottom: 26px;
+    bottom: 18px;
     left: 50%;
     transform: translate(-50%, 50%);
     font-size: 16px;
+    color: black;
+}
+.doodleFullScreen {
+	position: absolute;
+	width: 300px;
+    bottom: 38px;
+    left: 50%;
+    transform: translate(-50%, 50%);
+    font-size: 12px;
     color: black;
 }
 
