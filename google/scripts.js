@@ -101,7 +101,7 @@ function load(change) {
     document.getElementById("doodleSourceAnchor").href = doodleSource[doodleI];
     document.getElementById("doodleSource").innerHTML = doodleName[doodleI];
     document.getElementById("doodleDate").innerHTML = doodleDate[doodleI];
-	document.getElementById("doodleFullScreen").innerHTML = doodleFullScreen[doodleI];
+	document.getElementById("doodleFullScreen").href = doodleFullScreen[doodleI];
 }
 function crop(change) {
 	imageI = (Math.floor(document.getElementById("imageIndex").value)) - 1;
