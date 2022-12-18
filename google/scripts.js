@@ -1,6 +1,7 @@
 const doodleName = ['Halloween 2022','Gerald "Jerry" Lawson\'s 82nd Birthday'];
 const doodleSource = ['https://google.com/doodles/halloween-2022','https://www.google.com/doodles/gerald-jerry-lawsons-82nd-birthday'];
 const doodleDate = ['30 October 2022','1 December 2022'];
+const doodleFullScreen = ['https://google.com/logos/2021/halloween21/r1030_5e329/halloween21.html', 'https://google.com/logos/2022/lawson/r1030_5e329/lawson.html'];
 
 const imageSource = [['./assets/great_ghoul_duel/main-sprite.png', './assets/great_ghoul_duel/hats-sprite.png', './assets/great_ghoul_duel/achievements-sprite.png', './assets/great_ghoul_duel/tutorial-sprite.png', './assets/great_ghoul_duel/alpha-sprite.png', './assets/great_ghoul_duel/bravo-sprite.png', './assets/great_ghoul_duel/desktop-sprite.png', './assets/great_ghoul_duel/initial-sprite.png', './assets/great_ghoul_duel/mobile-sprite.png', './assets/great_ghoul_duel/dogfood-sprite.png'], ['./assets/jerry_lawson/main-sprite.png']];
 const imageOriginalSource = [['https://google.com/logos/2021/halloween21/r1030_5e329/main-sprite.png', 'https://google.com/logos/2021/halloween21/r1030_5e329/hats-sprite.png', 'https://google.com/logos/2021/halloween21/r1030_5e329/achievements-sprite.png', 'https://google.com/logos/2021/halloween21/r1030_5e329/tutorial-sprite.png', 'https://google.com/logos/2021/halloween21/r1030_5e329/alpha-sprite.png', 'https://google.com/logos/2021/halloween21/r1030_5e329/bravo-sprite.png', 'https://google.com/logos/2021/halloween21/r1030_5e329/desktop-sprite.png', 'https://google.com/logos/2021/halloween21/r1030_5e329/initial-sprite.png', 'https://google.com/logos/2021/halloween21/r1030_5e329/mobile-sprite.png', 'https://google.com/logos/2021/halloween21/r1030_5e329/dogfood-sprite.png'], ['https://google.com/logos/2022/lawson/r11292/main-sprite.png']];
@@ -100,6 +101,7 @@ function load(change) {
     document.getElementById("doodleSourceAnchor").href = doodleSource[doodleI];
     document.getElementById("doodleSource").innerHTML = doodleName[doodleI];
     document.getElementById("doodleDate").innerHTML = doodleDate[doodleI];
+	document.getElementById("doodleFullScreen").innerHTML = doodleFullScreen[doodleI];
 }
 function crop(change) {
 	imageI = (Math.floor(document.getElementById("imageIndex").value)) - 1;
