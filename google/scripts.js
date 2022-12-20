@@ -149,7 +149,7 @@ function downloadAudio() {
 	cutter.cut(element.src, 0, 30, function(elementDownload) {
 		var download = document.createElement('a');
   		download.download = "audioIndex(" + imageI + ").png";
-  		download.href = elementDownload;
+  		download.href = elementDownload.src;
   		download.click();
 	});
 }
