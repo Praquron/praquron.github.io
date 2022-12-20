@@ -145,11 +145,9 @@ function downloadImage() {
 }
 function downloadAudio() {
 	var element = document.getElementById("audio");
-	var cutter = new mp3cutter();
-	cutter.cut(element.src, 0, 30, function(elementDownload) {
-		var download = document.createElement('a');
-  		download.download = "audioIndex(" + imageI + ").png";
-  		download.href = elementDownload.src;
-  		download.click();
-	});
+
+        var download = document.createElement('a');
+        download.download = "audioIndex(" + imageI + ").png";
+        download.href = element.src + "#t=" + audioProperties[doodleI][audioI][1] + "," + audioProperties[doodleI][audioI][2];
+        download.click();
 }
