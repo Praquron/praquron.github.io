@@ -146,10 +146,10 @@ function downloadImage() {
 function downloadAudio() {
 	var element = document.getElementById("audio");
 	var elementDownload = new mp3cutter();
-	await elementDownload.cut(element.src, audioProperties[doodleI][audioI][1], audioProperties[doodleI][audioI][2], function(download) {
+	await elementDownload.cut(element.src, audioProperties[doodleI][audioI][1], audioProperties[doodleI][audioI][2], function(downloadElement) {
 		var download = document.createElement('a');
 		download.download = "audioIndex(" + audioI + ").mp3";
-		download.href = download;
+		download.href = downloadElement;
 		download.click();
 	});	
 }
