@@ -89,16 +89,34 @@ function load(change) {
 	document.getElementById("doodleFullScreen").href = doodleFullScreen[doodleI];
 }
 function crop(change) {
-	imageI = (Math.floor(document.getElementById("imageIndex").value)) - 1;
-    checkImageI(change);
-    document.getElementById("imageIndex").value = imageI + 1;
-    cropImage(imageSource[doodleI][imageProperties[doodleI][imageI][0]], imageProperties[doodleI][imageI][1], imageProperties[doodleI][imageI][2], imageProperties[doodleI][imageI][3], imageProperties[doodleI][imageI][4], imageOriginalSource[doodleI][imageProperties[doodleI][imageI][0]]);
+	if imageProperties[doodleI].length > 0 {
+		if Math.floor(document.getElementById("imageIndex").value === "Not Avaliable" {
+			imageI = 0;
+		} else {
+			imageI = (Math.floor(document.getElementById("imageIndex").value)) - 1;
+		}
+	    checkImageI(change);
+	    document.getElementById("imageIndex").value = imageI + 1;
+	    cropImage(imageSource[doodleI][imageProperties[doodleI][imageI][0]], imageProperties[doodleI][imageI][1], imageProperties[doodleI][imageI][2], imageProperties[doodleI][imageI][3], imageProperties[doodleI][imageI][4], imageOriginalSource[doodleI][imageProperties[doodleI][imageI][0]]);
+	} else {
+		document.getElementById("imageIndex").value = "Not Avaliable";
+		cropImage("./assets/main/empty.png", 0, 0, 0, 0, "Not Avaliable");
+	}
 }
 function trim(change) {
-	audioI = (Math.floor(document.getElementById("audioIndex").value)) - 1;
-    checkAudioI(change);
-    document.getElementById("audioIndex").value = audioI + 1;
-    trimAudio(audioSource[doodleI][audioProperties[doodleI][audioI][0]], audioProperties[doodleI][audioI][1], audioProperties[doodleI][audioI][2], audioOriginalSource[doodleI][audioProperties[doodleI][audioI][0]]);
+	if audioProperties[doodleI].length > 0 {
+		if Math.floor(document.getElementById("audioIndex").value === "Not Avaliable" {
+			audioI = 0;
+		} else {
+			audioI = (Math.floor(document.getElementById("audioIndex").value)) - 1;
+		}
+		checkAudioI(change);
+		document.getElementById("audioIndex").value = audioI + 1;
+		trimAudio(audioSource[doodleI][audioProperties[doodleI][audioI][0]], audioProperties[doodleI][audioI][1], audioProperties[doodleI][audioI][2], audioOriginalSource[doodleI][audioProperties[doodleI][audioI][0]]);
+	} else {
+		document.getElementById("audioIndex").value = "Not Avaliable";
+		trimAudio("./assets/main/empty.mp3", 0, 0, "Not Avaliable");
+	}
 }
 
 function cropImage(imagePath, newX, newY, newWidth, newHeight, originalImagePath) {
