@@ -146,8 +146,10 @@ function downloadImage() {
 function downloadAudio() {
 	var element = document.getElementById("audio");
 	var cutter = new mp3cutter();
-	cutter.cut(element.src, 0, 30, function(trimmed) {
-		alert("My blob has been cutted! ");
-		console.log(cuttedBlob);
+	cutter.cut(element.src, 0, 30, function(elementDownload) {
+		var download = document.createElement('a');
+  		download.download = "audioIndex(" + imageI + ").png";
+  		download.href = elementDownload;
+  		download.click();
 	});
 }
