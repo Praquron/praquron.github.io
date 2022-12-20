@@ -89,8 +89,8 @@ function load(change) {
 	document.getElementById("doodleFullScreen").href = doodleFullScreen[doodleI];
 }
 function crop(change) {
-	if imageProperties[doodleI].length > 0 {
-		if Math.floor(document.getElementById("imageIndex").value === "Not Avaliable" {
+	if (imageProperties[doodleI].length > 0) {
+		if (document.getElementById("imageIndex").value === "Not Avaliable") {
 			imageI = 0;
 		} else {
 			imageI = (Math.floor(document.getElementById("imageIndex").value)) - 1;
@@ -104,8 +104,8 @@ function crop(change) {
 	}
 }
 function trim(change) {
-	if audioProperties[doodleI].length > 0 {
-		if Math.floor(document.getElementById("audioIndex").value === "Not Avaliable" {
+	if (audioProperties[doodleI].length > 0) {
+		if (document.getElementById("audioIndex").value === "Not Avaliable") {
 			audioI = 0;
 		} else {
 			audioI = (Math.floor(document.getElementById("audioIndex").value)) - 1;
