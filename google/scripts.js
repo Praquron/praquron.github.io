@@ -90,7 +90,7 @@ function load(change) {
 }
 function crop(change) {
 	if (imageProperties[doodleI].length > 0) {
-		if (document.getElementById("imageIndex").value === "Not Avaliable") {
+		if (document.getElementById("imageIndex").value === 0) {
 			imageI = 0;
 		} else {
 			imageI = (Math.floor(document.getElementById("imageIndex").value)) - 1;
@@ -99,13 +99,13 @@ function crop(change) {
 	    document.getElementById("imageIndex").value = imageI + 1;
 	    cropImage(imageSource[doodleI][imageProperties[doodleI][imageI][0]], imageProperties[doodleI][imageI][1], imageProperties[doodleI][imageI][2], imageProperties[doodleI][imageI][3], imageProperties[doodleI][imageI][4], imageOriginalSource[doodleI][imageProperties[doodleI][imageI][0]]);
 	} else {
-		document.getElementById("imageIndex").value = "Not Avaliable";
+		document.getElementById("imageIndex").value = 0;
 		cropImage("./assets/main/empty.png", 0, 0, 0, 0, "Not Avaliable");
 	}
 }
 function trim(change) {
 	if (audioProperties[doodleI].length > 0) {
-		if (document.getElementById("audioIndex").value === "Not Avaliable") {
+		if (document.getElementById("audioIndex").value === 0) {
 			audioI = 0;
 		} else {
 			audioI = (Math.floor(document.getElementById("audioIndex").value)) - 1;
@@ -114,7 +114,7 @@ function trim(change) {
 		document.getElementById("audioIndex").value = audioI + 1;
 		trimAudio(audioSource[doodleI][audioProperties[doodleI][audioI][0]], audioProperties[doodleI][audioI][1], audioProperties[doodleI][audioI][2], audioOriginalSource[doodleI][audioProperties[doodleI][audioI][0]]);
 	} else {
-		document.getElementById("audioIndex").value = "Not Avaliable";
+		document.getElementById("audioIndex").value = 0;
 		trimAudio("./assets/main/empty.mp3", 0, 0, "Not Avaliable");
 	}
 }
