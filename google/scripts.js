@@ -146,6 +146,6 @@ function downloadAudio() {
 	var element = document.getElementById("audio");
 	var download = document.createElement('a');
   	download.download = "audioIndex(" + audioI + ").mp3";
-  	download.href = element.src;
+  	download.href = element;
   	download.click();
 }
