@@ -126,7 +126,7 @@ function cropImage(imagePath, newX, newY, newWidth, newHeight, originalImagePath
 function trimAudio(audioPath, audioStart, audioEnd, originalAudioPath) {
 	let trim = new mp3cutter();
 	trim.cut(audioPath, audioStart, audioEnd, function(trimmedAudio) {
-		document.getElementById("audio").src = trimmedAudio;
+		document.getElementById("audio").src = trimmedAudio.src;
 	});
    	
 	document.getElementById("audioStart").innerHTML = audioStart;
