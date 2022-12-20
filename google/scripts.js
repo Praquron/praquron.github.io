@@ -124,8 +124,10 @@ function cropImage(imagePath, newX, newY, newWidth, newHeight, originalImagePath
   	});
 }
 function trimAudio(audioPath, audioStart, audioEnd, originalAudioPath) {
-	var trimmedAudio = `${audioPath}#t=${audioStart},${audioEnd}`;
-    document.getElementById("audio").src = trimmedAudio;
+	let trim = new mp3cutter();
+	trim.cut(audioPath, audioStart, audioEnd, function(trimmedAudio) {
+		document.getElementById("audio").src = trimmedAudio;
+	});
    	
 	document.getElementById("audioStart").innerHTML = audioStart;
 	document.getElementById("audioEnd").innerHTML = audioEnd;
@@ -147,7 +149,7 @@ function downloadAudio() {
 	var element = document.getElementById("audio");
 
         var download = document.createElement('a');
-        download.download = "audioIndex(" + imageI + ").png";
+        download.download = "audioIndex(" + audioI + ").mp3";
         download.href = element.src + "#t=" + audioProperties[doodleI][audioI][1] + "," + audioProperties[doodleI][audioI][2];
         download.click();
 }
