@@ -145,8 +145,9 @@ function downloadImage() {
 }
 function downloadAudio() {
 	var element = document.getElementById("audio");
-	var elementDownload = new mp3cutter();
-	await elementDownload.cut(element, audioProperties[doodleI][audioI][1], audioProperties[doodleI][audioI][2], function(downloadElement) {
-		alert(downloadElement);
-	});	
+	var cutter = new mp3cutter();
+	cutter.cut(element.src, 0, 30, function(trimmed) {
+		alert("My blob has been cutted! ");
+		console.log(cuttedBlob);
+	});
 }
