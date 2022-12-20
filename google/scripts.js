@@ -30,7 +30,6 @@ loadImageButton.addEventListener('click', function() {
 });
 const downloadImageButton = document.querySelector("button.downloadImage");
 downloadImageButton.addEventListener('click', function() {
-    crop(0);
 	downloadImage();
 });
 
@@ -48,7 +47,6 @@ loadAudioButton.addEventListener('click', function() {
 });
 const downloadAudioButton = document.querySelector("button.downloadAudio");
 downloadAudioButton.addEventListener('click', function() {
-	trim(0);
 	downloadAudio();
 });
 
@@ -139,15 +137,15 @@ function trimAudio(audioPath, audioStart, audioEnd, originalAudioPath) {
 function downloadImage() {
   	var element = document.getElementById("image");
   	var elementDownload = element.toDataURL("image/png").replace("image/png", "image/octet-stream");
-  	var downloadLink = document.createElement('image');
-  	downloadLink.download = "imageIndex(" + imageI + ").png";
-  	downloadLink.href = elementDownload;
-  	downloadLink.click();
+  	var download = document.createElement('a');
+  	download.download = "imageIndex(" + imageI + ").png";
+  	download.href = elementDownload;
+  	download.click();
 }
 function downloadAudio() {
 	var element = document.getElementById("audio");
-	var downloadLink = document.createElement('audio');
-  	downloadLink.download = "audioIndex(" + audioI + ").mp3";
-  	downloadLink.href = element.src;
-  	downloadLink.click();
+	var download = document.createElement('a');
+  	download.download = "audioIndex(" + audioI + ").mp3";
+  	download.href = element.src;
+  	download.click();
 }
