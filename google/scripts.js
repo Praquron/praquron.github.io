@@ -90,7 +90,8 @@ function load(change) {
     doodleI = (Math.floor(document.getElementById("doodleIndex").value)) - 1;
     checkDoodleI(change);
     document.getElementById("doodleIndex").value = doodleI + 1;
-    
+    document.getElementById("console").innerHTML = lastImageI
+	
     crop(0);
     trim(0);
 
