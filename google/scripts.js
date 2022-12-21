@@ -65,9 +65,9 @@ function checkDoodleI(change) {
 	} else if (doodleI > (imageSource.length - 1)) {
 		doodleI = imageSource.length - 1;
 	}
-	
-	imageI = lastImageI[doodleI];
-	audioI = lastAudioI[doodleI];
+    
+    imageI = lastImageI[doodleI];
+    audioI = lastAudioI[doodleI];
 }
 function checkImageI(change) {
 	imageI += change;
@@ -76,6 +76,9 @@ function checkImageI(change) {
 	} else if (imageI > (imageProperties[doodleI].length - 1)) {
 		imageI = imageProperties[doodleI].length - 1;
 	}
+    if (Math.abs(change) > 0) {
+        lastImageI[doodleI] = imageI;
+    }
 }
 function checkAudioI(change) {
 	audioI += change;
@@ -84,6 +87,9 @@ function checkAudioI(change) {
 	} else if (audioI > (audioProperties[doodleI].length - 1)) {
 		audioI = audioProperties[doodleI].length - 1;
 	}
+    if (Math.abs(change) > 0) {
+        lastAudioI[doodleI] = audioI;
+    }
 }
 
 function load(change) {
@@ -108,7 +114,6 @@ function crop(change) {
 			imageI = (Math.floor(document.getElementById("imageIndex").value)) - 1;
 		}
 	    checkImageI(change);
-		lastImageI[doodleI] = imageI;
 	    document.getElementById("imageIndex").value = imageI + 1;
 	    cropImage(imageSource[doodleI][imageProperties[doodleI][imageI][0]], imageProperties[doodleI][imageI][1], imageProperties[doodleI][imageI][2], imageProperties[doodleI][imageI][3], imageProperties[doodleI][imageI][4], imageOriginalSource[doodleI][imageProperties[doodleI][imageI][0]]);
 	} else {
@@ -124,7 +129,6 @@ function trim(change) {
 			audioI = (Math.floor(document.getElementById("audioIndex").value)) - 1;
 		}
 		checkAudioI(change);
-		lastAudioI[doodleI] = audioI;
 		document.getElementById("audioIndex").value = audioI + 1;
 		trimAudio(audioSource[doodleI][audioProperties[doodleI][audioI][0]], audioProperties[doodleI][audioI][1], audioProperties[doodleI][audioI][2], audioOriginalSource[doodleI][audioProperties[doodleI][audioI][0]]);
 	} else {
