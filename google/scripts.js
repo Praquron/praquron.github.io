@@ -59,12 +59,18 @@ downloadAudioButton.addEventListener('click', function() {
 });
 
 function checkDoodleI(change) {
+	lastImageI[doodleI] = imageI;
+	lastAudioI[doodleI] = audioI;
+
 	doodleI += change;
     if (doodleI < 0) {
 		doodleI = 0;
 	} else if (doodleI > (imageSource.length - 1)) {
 		doodleI = imageSource.length - 1;
 	}
+	
+	imageI = lastImageI[doodleI];
+	audioI = lastAudioI[doodleI];
 }
 function checkImageI(change) {
 	imageI += change;
@@ -86,12 +92,6 @@ function checkAudioI(change) {
 function load(change) {
     doodleI = (Math.floor(document.getElementById("doodleIndex").value)) - 1;
     checkDoodleI(change);
-	if (Math.abs(change) > 0) {
-		lastImageI[doodleI - change] = imageI;
-		lastAudioI[doodleI - change] = audioI;
-		imageI = lastImageI[doodleI];
-		audioI = lastAudioI[doodleI];
-	}
     document.getElementById("doodleIndex").value = doodleI + 1;
     
     crop(0);
