@@ -85,13 +85,17 @@ function checkAudioI(change) {
 
 function load(change) {
     doodleI = (Math.floor(document.getElementById("doodleIndex").value)) - 1;
-	lastImageI[doodleI] = imageI;
-	lastAudioI[doodleI] = audioI;
     checkDoodleI(change);
+	if (Math.abs(change) > 0) {
+		lastImageI[doodleI - change] = imageI;
+		lastAudioI[doodleI - change] = audioI;
+		imageI = lastImageI[doodleI];
+		audioI = lastAudioI[doodleI];
+	}
     document.getElementById("doodleIndex").value = doodleI + 1;
     
-    crop(lastImageI[doodleI] - imageI);
-    trim(lastAudioI[doodleI] - audioI);
+    crop(0);
+    trim(0);
 
     document.getElementById("doodleSourceAnchor").href = doodleSource[doodleI];
     document.getElementById("doodleSource").innerHTML = doodleName[doodleI];
