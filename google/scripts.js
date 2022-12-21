@@ -59,9 +59,6 @@ downloadAudioButton.addEventListener('click', function() {
 });
 
 function checkDoodleI(change) {
-	lastImageI[doodleI] = imageI;
-	lastAudioI[doodleI] = audioI;
-
 	doodleI += change;
     if (doodleI < 0) {
 		doodleI = 0;
@@ -110,6 +107,7 @@ function crop(change) {
 			imageI = (Math.floor(document.getElementById("imageIndex").value)) - 1;
 		}
 	    checkImageI(change);
+		lastImageI[doodleI] = imageI;
 	    document.getElementById("imageIndex").value = imageI + 1;
 	    cropImage(imageSource[doodleI][imageProperties[doodleI][imageI][0]], imageProperties[doodleI][imageI][1], imageProperties[doodleI][imageI][2], imageProperties[doodleI][imageI][3], imageProperties[doodleI][imageI][4], imageOriginalSource[doodleI][imageProperties[doodleI][imageI][0]]);
 	} else {
@@ -125,6 +123,7 @@ function trim(change) {
 			audioI = (Math.floor(document.getElementById("audioIndex").value)) - 1;
 		}
 		checkAudioI(change);
+		lastAudioI[doodleI] = audioI;
 		document.getElementById("audioIndex").value = audioI + 1;
 		trimAudio(audioSource[doodleI][audioProperties[doodleI][audioI][0]], audioProperties[doodleI][audioI][1], audioProperties[doodleI][audioI][2], audioOriginalSource[doodleI][audioProperties[doodleI][audioI][0]]);
 	} else {
