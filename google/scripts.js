@@ -67,29 +67,27 @@ function checkDoodleI(change) {
 	}
     
     imageI = lastImageI[doodleI];
+    document.getElementById("imageIndex").value = imageI + 1;
     audioI = lastAudioI[doodleI];
+    document.getElementById("audioIndex").value = audioI + 1;
 }
 function checkImageI(change) {
 	imageI += change;
-    if (imageI < 0) {
+        if (imageI < 0) {
 		imageI = 0;
 	} else if (imageI > (imageProperties[doodleI].length - 1)) {
 		imageI = imageProperties[doodleI].length - 1;
 	}
-    if (Math.abs(change) > 0) {
         lastImageI[doodleI] = imageI;
-    }
 }
 function checkAudioI(change) {
 	audioI += change;
-    if (audioI < 0) {
+        if (audioI < 0) {
 		audioI = 0;
 	} else if (audioI > (audioProperties[doodleI].length - 1)) {
 		audioI = audioProperties[doodleI].length - 1;
 	}
-    if (Math.abs(change) > 0) {
         lastAudioI[doodleI] = audioI;
-    }
 }
 
 function load(change) {
@@ -109,7 +107,7 @@ function load(change) {
 function crop(change) {
 	if (imageProperties[doodleI].length > 0) {
 		if (document.getElementById("imageIndex").value === 0) {
-			imageI = 0;
+			imageI = lastImageI[doodleI];
 		} else {
 			imageI = (Math.floor(document.getElementById("imageIndex").value)) - 1;
 		}
@@ -124,7 +122,7 @@ function crop(change) {
 function trim(change) {
 	if (audioProperties[doodleI].length > 0) {
 		if (document.getElementById("audioIndex").value === 0) {
-			audioI = 0;
+			audioI = lastAudioI[doodleI];
 		} else {
 			audioI = (Math.floor(document.getElementById("audioIndex").value)) - 1;
 		}
