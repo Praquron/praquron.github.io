@@ -1,6 +1,14 @@
 let doodleI = 0;
 let imageI = 0;
 let audioI = 0;
+
+let lastImageI = [];
+let lastAudioI = [];
+for (let i = 0; i < imageSource.length; i++) {
+	lastImageI.push(0);
+	lastAudioI.push(0);
+}
+
 load(0);
 
 const previousDoodleButton = document.querySelector("button.previousDoodle");
@@ -77,11 +85,13 @@ function checkAudioI(change) {
 
 function load(change) {
     doodleI = (Math.floor(document.getElementById("doodleIndex").value)) - 1;
+	lastImageI[doodleI] = imageI;
+	lastAudioI[doodleI] = audioI;
     checkDoodleI(change);
     document.getElementById("doodleIndex").value = doodleI + 1;
     
-    crop(0);
-    trim(0);
+    crop(lastImageI[doodleI] - imageI);
+    trim(lastAudioI[doodleI] - audioI);
 
     document.getElementById("doodleSourceAnchor").href = doodleSource[doodleI];
     document.getElementById("doodleSource").innerHTML = doodleName[doodleI];
