@@ -1,4 +1,4 @@
 # praquron.github.io
 
 ### Introduction
-This is where all the assets and code from [praquron.github.io](https://praquron.github.io) live, mainy used for decompiling Google Doodles. Feel free to use them.
+Website of Praquron. where I mainly decompile Google Doodles (still in progress). I store all my assets and code here because they feel cosy here. They are happy to be freely used.
