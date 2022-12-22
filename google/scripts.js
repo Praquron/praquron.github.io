@@ -9,7 +9,8 @@ for (let i = 0; i < imageSource.length; i++) {
 	lastAudioI.push("Not Avaliable");
 }
 
-load(0);
+load(1);
+load(-1);
 
 const previousDoodleButton = document.querySelector("button.previousDoodle");
 previousDoodleButton.addEventListener("click", function () {
