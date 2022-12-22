@@ -1,196 +1,211 @@
 @import url(https://fonts.googleapis.com/css?family=Poor+Story);
-		
+
 html {
 	color-scheme: dark;
-}
-body {
-	margin: 20px auto;
-	font-family: 'Poor Story';
-	font-weight: 300;
-	text-align: center;
-	font-size: 1rem;
-}
-h2 {
-	color: white;
-}
-canvas {
-	margin: 20px auto;
-}
-input {
+	margin: 0;
+	padding: 0;
+	color: transparent;
 	border: none;
+	border-color: transparent;
+	background: none;
 	background-color: transparent;
-	color: black;
-	font-family: 'Poor Story';
-	margin: 1rem;
-	text-align: center;
 	outline: none;
-	width: 160px;
-	height: 24px;
-	font-size: 24px;
-}
-button {
- 	background: transparent;
-    border: transparent;
-    border-radius: 0px;
-    color: transparent;
-  	padding: 2px;
-    cursor: pointer;
-    font-family: 'Poor Story';
-}
-div.wrapper {
-    display: flex;
-    flex-direction: column;
-}
-form {
-	display: flex;
-    justify-content: center;
-}
-label {
-    margin: 0 1rem;
-    color: gray;
+	text-align: center;
+	text-decoration: none;
+	font-family: "Poor Story";
+	font-size: auto;
+	font-weight: normal;
 }
 
+a {
+	max-width: 100vw;
+	color: black;
+	text-align: center;
+}
 a:link {
-  	color: blue;
-  	background-color: transparent;
-  	text-decoration: none;
+	color: blue;
 }
 a:visited {
 	color: indigo;
-  	background-color: transparent;
-  	text-decoration: none;
 }
 a:hover {
-  	background-color: transparent;
-  	text-decoration: underline;
+	text-decoration: underline;
 }
 a:active {
 	color: red;
- 	background-color: transparent;
-  	text-decoration: underline;
+	text-decoration: underline;
 }
-		
+
 audio::-webkit-media-controls-panel {
-	border-radius: 0;
-	background-color: rgb(29,29,29);
+	background-color: rgb(29, 29, 29);
 }
 audio::-webkit-media-controls-play-button {
 	border-radius: 50%;
 }
 audio::-webkit-media-controls-play-button:hover {
-	background-color: rgb(38,38,38);;
+	background-color: rgb(38, 38, 38);
 }
 audio::-webkit-media-controls-mute-button {
-  	border-radius: 25px;
+	border-radius: 50%;
 }
 audio::-webkit-media-controls-mute-button:hover {
-  	background-color: rgb(38,38,38);
+	background-color: rgb(38, 38, 38);
 }
 audio::-webkit-media-controls-current-time-display {
-	color: white;
-	font-family: 'Poor Story';
+	font-family: "Poor Story";
 }
 audio::-webkit-media-controls-time-remaining-display {
-	color: white;
-	font-family: 'Poor Story';
-}
-audio::-webkit-media-controls-timeline {
-	margin-left: 8px;
-	margin-right: 8px;
-}
-audio::-webkit-media-controls-volume-slider {
-	background-color: rgb(38,38,38);
-  	border-radius: 25px;
-}
-		
-.inputBackground {
-    position: relative;
-    text-align: center;
-}
-.inputBox {
-    position: absolute;
-    font-family: 'Poor Story';
-    text-align: center;
-    outline: none;
-    width: 100%;
-    font-size: 24px;
-	bottom: -8px;
+	font-family: "Poor Story";
 }
 
-.titleBackground {
+button {
+	color: transparent;
+	border: none;
+	border-color: transparent;
+	background: none;
+	background-color: transparent;
+	outline: none;
+	cursor: pointer;
+}
+div.wrapper {
+	display: flex;
+	flex-direction: column;
+}
+h2 {
+	color: white;
+	font-weight: bold;
+}
+input {
+	width: 160px;
+	max-width: 100vw;
+	color: black;
+	border: none;
+	border-color: transparent;
+	background: none;
+	background-color: transparent;
+	outline: none;
+	text-align: center;
+	font-family: "Poor Story";
+	font-size: 24px;
+}
+input::-webkit-outer-spin-button {
+	-webkit-appearance: none;
+	 margin: 0;
+}
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+span {
+	max-width: 100vw;
+	color: black;
+	border: none;
+	border-color: transparent;
+	background: none;
+	background-color: transparent;
+	outline: none;
+	text-align: center;
+	font-family: "Poor Story";
+}
+
+.inputBackground {
 	position: relative;
-    text-align: center;
+	max-width: 100vw;
+}
+.inputBox {
+	position: absolute;
+	transform: translate(-50%, 50%);
+	left: 50%;
+	bottom: 24px;
+	width: 100%;
+	color: transparent;
+	border: none;
+	border-color: none;
+	outline: none;
+	background: none;
+	background-color: transparent; 
+}
+
+.doodleBackground {
+	position: relative;
+	max-width: 100vw;
 }
 .doodleName {
 	position: absolute;
+	transform: translate(-50%, 50%);
+	left: 50%;
+	bottom: 54px;
 	width: 300px;
-    bottom: 54px;
-    left: 50%;
-    transform: translate(-50%, 50%);
-    font-size: 20px;
-    color: black;
-}
-.doodleDate {
-	position: absolute;
-	width: 300px;
-    bottom: 18px;
-    left: 50%;
-    transform: translate(-50%, 50%);
-    font-size: 16px;
-    color: black;
+	max-width: 100vw;
+	color: black;
+	font-size: 16px;
 }
 .doodleFullScreen {
 	position: absolute;
+	transform: translate(-50%, 50%);
+	left: 50%;
+	bottom: 38px;
 	width: 300px;
-    bottom: 38px;
-    left: 50%;
-    transform: translate(-50%, 50%);
-    font-size: 12px;
-    color: black;
+	max-width: 100vw;
+	color: black;
+	font-size: 12px;
+}
+.doodleDate {
+	position: absolute;
+	transform: translate(-50%, 50%);
+	left: 50%;
+	bottom: 18px;
+	width: 300px;
+	max-width: 100vw;
+	color: black;
+	font-size: 16px;
 }
 
 .informationBackground {
-    position: relative;
-    text-align: center;
+	position: relative;
+	max-width: 100vw;
 }
 .informationImageProperties {
-    position: absolute;
+	position: absolute;
+	transform: translate(-50%, 50%);
+	left: 50%;
+	bottom: 100px;
 	width: 600px;
-    bottom: 102px;
-    left: 50%;
-    transform: translate(-50%, 50%);
-    font-size: 20px;
-    color: black;
+	max-width: 100vw;
+	color: black;
+	font-size: 16px;
 }
 .informationImageSource {
-    position: absolute;
+	position: absolute;
+	transform: translate(-50%, 50%);
+	left: 50%;
+	bottom: 84px;
 	width: 600px;
-    bottom: 82px;
-    left: 50%;
-    transform: translate(-50%, 50%);
-    font-size: 16px;
-    color: black;
+	max-width: 100vw;
+	color: black;
+	font-size: 16px;
 }
-
 .informationAudioProperties {
-    position: absolute;
+	position: absolute;
+	transform: translate(-50%, 50%);
+	left: 50%;
+	bottom: 100px;
 	width: 600px;
-    bottom: 102px;
-    left: 50%;
-    transform: translate(-50%, 50%);
-    font-size: 16px;
-    color: black;
+	max-width: 100vw;
+	color: black;
+	font-size: 16px;
 }
 .informationAudioSource {
-    position: absolute;
+	position: absolute;
+	transform: translate(-50%, 50%);
+	left: 50%;
+	bottom: 84px;
 	width: 600px;
-    bottom: 82px;
-    left: 50%;
-    transform: translate(-50%, 50%);
-    font-size: 16px;
-    color: black;
+	max-width: 100vw;
+	color: black;
+	font-size: 16px;
 }
-		
+
 .notice {
 	color: gray;
 	font-size: 10px;
