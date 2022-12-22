@@ -59,6 +59,10 @@ downloadAudioButton.addEventListener('click', function() {
 });
 
 function checkDoodleI(change) {
+	if (typeof doodleI !== "number") {
+		doodleI = 0;
+	}
+	
 	doodleI += change;
 	
 	if (doodleI < 0) {
@@ -68,6 +72,10 @@ function checkDoodleI(change) {
 	}
 }
 function checkImageI(change) {
+	if (typeof imageI !== "number") {
+		imageI = 0;
+	}
+	
 	imageI += change;
 	
 	if (imageI < 0) {
@@ -77,6 +85,10 @@ function checkImageI(change) {
 	}
 }
 function checkAudioI(change) {
+	if (typeof audioI !== "number") {
+		audioI = 0;
+	}
+	
 	audioI += change;
 	
 	if (audioI < 0) {
@@ -178,7 +190,7 @@ function trimAudio(audioPath, audioStart, audioEnd, originalAudioPath) {
 	document.getElementById("audioDuration").innerHTML = audioEnd - audioStart; 
 	document.getElementById("audioSourceAnchor").href = originalAudioPath;
 	document.getElementById("audioSource").innerHTML = originalAudioPath;
- }
+}
 
 function downloadImage() {
 	var element = document.getElementById("image");
