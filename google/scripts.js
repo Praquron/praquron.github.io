@@ -170,21 +170,20 @@ function cropImage(imagePath, newX, newY, newWidth, newHeight, originalImagePath
 	ctx = canvas.getContext("2d");
 
 	originalImage.addEventListener("load", function () {
-	canvas.width = newWidth;
-	canvas.height = newHeight;
-	ctx.drawImage(originalImage, newX, newY, newWidth, newHeight, 0, 0, newWidth, newHeight);
-
-	document.getElementById("imageWidth").innerHTML = newWidth;
-	document.getElementById("imageHeight").innerHTML = newHeight;
-	document.getElementById("imageX").innerHTML = newX;
-	document.getElementById("imageY").innerHTML = newY;
-	document.getElementById("imageSourceAnchor").href = originalImagePath;
-	document.getElementById("imageSource").innerHTML = originalImagePath;
+		canvas.width = newWidth;
+		canvas.height = newHeight;
+		ctx.drawImage(originalImage, newX, newY, newWidth, newHeight, 0, 0, newWidth, newHeight);
+	
+		document.getElementById("imageWidth").innerHTML = newWidth;
+		document.getElementById("imageHeight").innerHTML = newHeight;
+		document.getElementById("imageX").innerHTML = newX;
+		document.getElementById("imageY").innerHTML = newY;
+		document.getElementById("imageSourceAnchor").href = originalImagePath;
+		document.getElementById("imageSource").innerHTML = originalImagePath;
 	});
 }
 function trimAudio(audioPath, audioStart, audioEnd, originalAudioPath) {
-	document.getElementById("audio").src =
-	audioPath + "#t=" + audioStart + "," + audioEnd;
+	document.getElementById("audio").src = audioPath + "#t=" + audioStart + "," + audioEnd;
 
 	document.getElementById("audioStart").innerHTML = audioStart;
 	document.getElementById("audioEnd").innerHTML = audioEnd;
