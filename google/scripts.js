@@ -59,11 +59,12 @@ downloadAudioButton.addEventListener('click', function() {
 });
 
 function checkDoodleI(change) {
-	doodleI += change;
-	if (doodleI < 0) {
+	if ((doodleI + change) < 0) {
 		doodleI = 0;
-	} else if (doodleI > (imageSource.length - 1)) {
+	} else if ((doodleI + change) > (imageSource.length - 1)) {
 		doodleI = imageSource.length - 1;
+	} else {
+		doodleI += change;
 	}
 	
 	imageI = lastImageI[doodleI];
@@ -72,21 +73,23 @@ function checkDoodleI(change) {
 	document.getElementById("audioIndex").value = audioI + 1;
 }
 function checkImageI(change) {
-	imageI += change;
-	if (imageI < 0) {
+	if ((imageI + change) < 0) {
 		imageI = 0;
-	} else if (imageI > (imageProperties[doodleI].length - 1)) {
+	} else if ((imageI + change) > (imageProperties[doodleI].length - 1)) {
 		imageI = imageProperties[doodleI].length - 1;
+	} else {
+		imageI += change;
 	}
 	
 	lastImageI[doodleI] = imageI;
 }
 function checkAudioI(change) {
-	audioI += change;
-	if (audioI < 0) {
+	if ((audioI + change) < 0) {
 		audioI = 0;
-	} else if (audioI > (audioProperties[doodleI].length - 1)) {
+	} else if ((audioI + change) > (audioProperties[doodleI].length - 1)) {
 		audioI = audioProperties[doodleI].length - 1;
+	} else {
+		audioI += change;
 	}
 	
 	lastAudioI[doodleI] = audioI;
