@@ -9,8 +9,7 @@ for (let i = 0; i < imageSource.length; i++) {
 	lastAudioI.push("Not Avaliable");
 }
 
-load(1);
-load(-1);
+load(0, true);
 
 const previousDoodleButton = document.querySelector("button.previousDoodle");
 previousDoodleButton.addEventListener("click", function () {
@@ -22,8 +21,7 @@ nextDoodleButton.addEventListener("click", function () {
 });
 const loadDoodleButton = document.querySelector("button.loadDoodle");
 loadDoodleButton.addEventListener("click", function () {
-	load(1);
-	load(-1);
+	load(0, true);
 });
 
 const previousImageButton = document.querySelector("button.previousImage");
@@ -36,8 +34,7 @@ nextImageButton.addEventListener("click", function () {
 });
 const loadImageButton = document.querySelector("button.loadImage");
 loadImageButton.addEventListener("click", function () {
-	crop(1);
-	crop(-1);
+	crop(0, true);
 });
 const downloadImageButton = document.querySelector("button.downloadImage");
 downloadImageButton.addEventListener("click", function () {
@@ -54,8 +51,7 @@ nextAudioButton.addEventListener("click", function () {
 });
 const loadAudioButton = document.querySelector("button.loadAudio");
 loadAudioButton.addEventListener("click", function () {
-	trim(1);
-	trim(-1);
+	trim(0, true);
 });
 const downloadAudioButton = document.querySelector("button.downloadAudio");
 downloadAudioButton.addEventListener("click", function () {
@@ -66,6 +62,7 @@ function checkDoodleI(change) {
 	if (typeof doodleI !== "number") {
 		doodleI = 0;
 	}
+	
 	doodleI += change;
 
 	if (doodleI < 0) {
@@ -101,15 +98,20 @@ function checkAudioI(change) {
 	}
 }
 
-function load(change) {
-	doodleI = Math.floor(document.getElementById("doodleIndex").value) - 1;
-	let lastI = doodleI;
+function load(change, load) {
+	if (document.getElementById("doodleIndex").value > 0) {
+		doodleI = Math.floor(document.getElementById("doodleIndex").value) - 1;
+	} else {
+		doodleI = 0;
+	}
+	lastI = doodleI;
 	checkDoodleI(change);
+	
 	document.getElementById("doodleIndex").value = doodleI + 1;
 
-	if (doodleI !== lastI) {
-		crop(0);
-		trim(0);
+	if ((doodleI !== lastI) || load) {
+		crop(0, true);
+		trim(0, true);
 	}
 
 	document.getElementById("doodleSourceAnchor").href = doodleSource[doodleI];
@@ -117,47 +119,42 @@ function load(change) {
 	document.getElementById("doodleDate").innerHTML = doodleDate[doodleI];
 	document.getElementById("doodleFullScreen").href = doodleFullScreen[doodleI];
 }
-function crop(change) {
+function crop(change, load) {
 	if (imageProperties[doodleI].length > 0) {
-		if (document.getElementById("imageIndex").value === 0) {
-			imageI = lastImageI[doodleI];
-		} else {
-			imageI = Math.floor(document.getElementById("imageIndex").value) - 1;
-		}
-	let lastI = imageI;
-	checkImageI(change);
-	lastImageI[doodleI] = imageI;
-	document.getElementById("imageIndex").value = imageI + 1;
+		imageI = lastImageI[doodleI];
+		lastI = imageI;
+		checkImageI(change);
 
-	if (imageI === lastI) {
+		if ((imageI !== lastI) || load) {
+			cropImage(imageSource[doodleI][imageProperties[doodleI][imageI][0]], imageProperties[doodleI][imageI][1], imageProperties[doodleI][imageI][2], imageProperties[doodleI][imageI][3], imageProperties[doodleI][imageI][4], imageOriginalSource[doodleI][imageProperties[doodleI][imageI][0]]);
+
+			lastImageI[doodleI] = imageI;
+			document.getElementById("imageIndex").value = imageI + 1;
+		}
+	} else {
+		cropImage("./assets/main/empty.png", 0, 0, 0, 0, "Not Avaliable");
+
 		lastImageI[doodleI] = "Not Avaliable";
 		document.getElementById("imageIndex").value = 0;
-
-		cropImage("./assets/main/empty.png", 0, 0, 0, 0, "Not Avaliable");
-	} else {
-		cropImage(imageSource[doodleI][imageProperties[doodleI][imageI][0]], imageProperties[doodleI][imageI][1], imageProperties[doodleI][imageI][2], imageProperties[doodleI][imageI][3], imageProperties[doodleI][imageI][4], imageOriginalSource[doodleI][imageProperties[doodleI][imageI][0]]);
 	}
 }
-function trim(change) {
+function trim(change, load) {
 	if (audioProperties[doodleI].length > 0) {
-		if (document.getElementById("audioIndex").value === 0) {
-			audioI = lastAudioI[doodleI];
-		} else {
-			audioI = Math.floor(document.getElementById("audioIndex").value) - 1;
-		}
-	}
-	let lastI = audioI;
-	checkAudioI(change);
-	lastAudioI[doodleI] = audioI;
-	document.getElementById("audioIndex").value = audioI + 1;
+		audioI = lastAudioI[doodleI];
+		lastI = audioI;
+		checkAudioI(change);
 
-	if (audioI === lastI) {
+		if ((audioI !== lastI) || load) {
+			trimAudio(audioSource[doodleI][audioProperties[doodleI][audioI][0]], audioProperties[doodleI][audioI][1], audioProperties[doodleI][audioI][2], audioOriginalSource[doodleI][audioProperties[doodleI][audioI][0]]);
+			
+			lastAudioI[doodleI] = audioI;
+			document.getElementById("audioIndex").value = audioI + 1;
+		}
+	} else {
+		trimAudio("./assets/main/empty.mp3", 0, 0, "Not Avaliable");
+
 		lastAudioI[doodleI] = "Not Avaliable";
 		document.getElementById("audioIndex").value = 0;
-
-		trimAudio("./assets/main/empty.mp3", 0, 0, "Not Avaliable");
-	} else {
-		trimAudio(audioSource[doodleI][audioProperties[doodleI][audioI][0]], audioProperties[doodleI][audioI][1], audioProperties[doodleI][audioI][2], audioOriginalSource[doodleI][audioProperties[doodleI][audioI][0]]);
 	}
 }
 
