@@ -46,12 +46,12 @@ audio::-webkit-media-controls-play-button:hover {
 	background-color: rgb(38, 38, 38);
 }
 audio::-webkit-media-controls-mute-button {
-	border-radius: 50%;
-}
-audio::-webkit-media-controls-mute-button:hover {
-	background-color: rgb(38, 38, 38);
+	display: none;
+	-webkit-appearance: none;
+	margin: 0;
 }
 audio::-webkit-media-controls-volume-slider {
+	display: none;
 	-webkit-appearance: none;
 	margin: 0;
 }
@@ -93,10 +93,12 @@ input {
 	font-size: 24px;
 }
 input::-webkit-outer-spin-button {
+	display: none;
 	-webkit-appearance: none;
 	margin: 0;
 }
 input::-webkit-inner-spin-button {
+	display: none;
 	-webkit-appearance: none;
 	margin: 0;
 }
