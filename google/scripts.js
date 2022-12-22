@@ -5,8 +5,8 @@ let audioI = 0;
 let lastImageI = [];
 let lastAudioI = [];
 for (let i = 0; i < imageSource.length; i++) {
-	lastImageI.push(0);
-	lastAudioI.push(0);
+	lastImageI.push("Not Avaliable");
+	lastAudioI.push("Not Avaliable");
 }
 
 load(0);
@@ -59,40 +59,31 @@ downloadAudioButton.addEventListener('click', function() {
 });
 
 function checkDoodleI(change) {
-	if ((doodleI + change) < 0) {
-		doodleI = 0;
-	} else if ((doodleI + change) > (imageSource.length - 1)) {
-		doodleI = imageSource.length - 1;
-	} else {
-		doodleI += change;
-	}
+	doodleI += change;
 	
-	imageI = lastImageI[doodleI];
-	document.getElementById("imageIndex").value = imageI + 1;
-	audioI = lastAudioI[doodleI];
-	document.getElementById("audioIndex").value = audioI + 1;
+	if (doodleI < 0) {
+		doodleI = 0;
+	} else if (doodleI > (imageSource.length - 1)) {
+		doodleI = imageSource.length - 1;
+	}
 }
 function checkImageI(change) {
-	if ((imageI + change) < 0) {
-		imageI = 0;
-	} else if ((imageI + change) > (imageProperties[doodleI].length - 1)) {
-		imageI = imageProperties[doodleI].length - 1;
-	} else {
-		imageI += change;
-	}
+	imageI += change;
 	
-	lastImageI[doodleI] = imageI;
+	if (imageI < 0) {
+		imageI = 0;
+	} else if (imageI > (imageProperties[doodleI].length - 1)) {
+		imageI = imageProperties[doodleI].length - 1;
+	}
 }
 function checkAudioI(change) {
-	if ((audioI + change) < 0) {
-		audioI = 0;
-	} else if ((audioI + change) > (audioProperties[doodleI].length - 1)) {
-		audioI = audioProperties[doodleI].length - 1;
-	} else {
-		audioI += change;
-	}
+	audioI += change;
 	
-	lastAudioI[doodleI] = audioI;
+	if (audioI < 0) {
+		audioI = 0;
+	} else if (audioI > (audioProperties[doodleI].length - 1)) {
+		audioI = audioProperties[doodleI].length - 1;
+	}
 }
 
 function load(change) {
@@ -116,11 +107,20 @@ function crop(change) {
 			imageI = (Math.floor(document.getElementById("imageIndex").value)) - 1;
 		}
 		checkImageI(change);
+		
+		if (lastImageI[doodleI] != imageI) {
+			imageI = lastImageI[doodleI];
+			document.getElementById("imageIndex").value = imageI + 1;
+			cropImage(imageSource[doodleI][imageProperties[doodleI][imageI][0]], imageProperties[doodleI][imageI][1], imageProperties[doodleI][imageI][2], imageProperties[doodleI][imageI][3], imageProperties[doodleI][imageI][4], imageOriginalSource[doodleI][imageProperties[doodleI][imageI][0]]);
+		}
+		
+		lastImageI[doodleI] = imageI;
 		document.getElementById("imageIndex").value = imageI + 1;
-		cropImage(imageSource[doodleI][imageProperties[doodleI][imageI][0]], imageProperties[doodleI][imageI][1], imageProperties[doodleI][imageI][2], imageProperties[doodleI][imageI][3], imageProperties[doodleI][imageI][4], imageOriginalSource[doodleI][imageProperties[doodleI][imageI][0]]);
 	} else {
-		document.getElementById("imageIndex").value = 0;
 		cropImage("./assets/main/empty.png", 0, 0, 0, 0, "Not Avaliable");
+		
+		lastImageI[doodleI] = "Not Avaliable";
+		document.getElementById("imageIndex").value = 0;
 	}
 }
 function trim(change) {
@@ -131,11 +131,20 @@ function trim(change) {
 			audioI = (Math.floor(document.getElementById("audioIndex").value)) - 1;
 		}
 		checkAudioI(change);
+		
+		if (lastAudioI[doodleI] != audioI) {
+			audioI = lastAudioI[doodleI];
+			document.getElementById("audioIndex").value = audioI + 1;
+			trimAudio(audioSource[doodleI][audioProperties[doodleI][audioI][0]], audioProperties[doodleI][audioI][1], audioProperties[doodleI][audioI][2], audioOriginalSource[doodleI][audioProperties[doodleI][audioI][0]]);
+		}
+		
+		lastAudioI[doodleI] = audioI;
 		document.getElementById("audioIndex").value = audioI + 1;
-		trimAudio(audioSource[doodleI][audioProperties[doodleI][audioI][0]], audioProperties[doodleI][audioI][1], audioProperties[doodleI][audioI][2], audioOriginalSource[doodleI][audioProperties[doodleI][audioI][0]]);
 	} else {
-		document.getElementById("audioIndex").value = 0;
 		trimAudio("./assets/main/empty.mp3", 0, 0, "Not Avaliable");
+		
+		lastAudioI[doodleI] = "Not Avaliable";
+		document.getElementById("audioIndex").value = 0;
 	}
 }
 
