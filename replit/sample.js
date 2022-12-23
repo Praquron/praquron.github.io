@@ -20,3 +20,5 @@ function printsName() {
   const fullName = author.getFullName();
   console.log(fullName);
 }
+
+listOfCitizens = [author];
