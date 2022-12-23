@@ -121,7 +121,11 @@ function load(change, load) {
 }
 function crop(change, load) {
 	if (imageProperties[doodleI].length > 0) {
-		imageI = lastImageI[doodleI];
+		if (load) {
+			imageI = Math.floor(document.getElementById("imageIndex").value - 1;
+		} else {
+			imageI = lastImageI[doodleI];
+		}
 		lastI = imageI;
 		checkImageI(change);
 
@@ -140,7 +144,11 @@ function crop(change, load) {
 }
 function trim(change, load) {
 	if (audioProperties[doodleI].length > 0) {
-		audioI = lastAudioI[doodleI];
+		if (load) {
+			audioI = Math.floor(document.getElementById("audioIndex").value - 1;
+		} else {
+			audioI = lastAudioI[doodleI];
+		}
 		lastI = audioI;
 		checkAudioI(change);
 
