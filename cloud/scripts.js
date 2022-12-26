@@ -1,4 +1,4 @@
-var cloud_console;
+let cloud_console;
 
 if (typeof cloud_console == "number") {
     cloud_console++;
