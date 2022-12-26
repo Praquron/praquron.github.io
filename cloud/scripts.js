@@ -1,6 +1,6 @@
 var cloud_console;
 
-if (cloud_console == undefined) {
+if (typeof cloud_console == "number") {
     cloud_console++;
 } else {
     cloud_console = 0;
