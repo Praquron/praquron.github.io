@@ -1,4 +1,4 @@
-# [/google](https://praquron.github.io/google)
+# [google](https://praquron.github.io/google)
 
 ### Information
 Hello! This is where I store all my Google Doodle code and assets to be used in my website.
