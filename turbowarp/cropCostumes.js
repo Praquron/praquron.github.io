@@ -26,20 +26,20 @@ class CropCostumes {
 						
 						X: {
 							type: Scratch.ArgumentType.NUMBER,
-							default: 0
+							defaultValue: 0
 						},
 						Y: {
 							type: Scratch.ArgumentType.NUMBER,
-							default: 0
+							defaultValue: 0
 						},
 						
 						WIDTH: {
 							type: Scratch.ArgumentType.NUMBER,
-							default: 50
+							defaultValue: 50
 						},
 						HEIGHT: {
 							type: Scratch.ArgumentType.NUMBER,
-							default: 50
+							defaultValue: 50
 						}
 					},
 
@@ -50,7 +50,7 @@ class CropCostumes {
 	};
 
 	cropCostume(args) {
-		return args.COSTUME;
+		return args.COSTUME + 1;
 	};
 }
 
