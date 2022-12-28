@@ -54,4 +54,4 @@ class CropCostumes {
 	};
 }
 
-Scratch.extensions.register(new CropCostumes);
+Scratch.extensions.register(new CropCostumes());
