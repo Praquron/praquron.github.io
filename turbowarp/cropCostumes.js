@@ -13,7 +13,7 @@ class CropCostumes {
 					
 					arguments: {
 						COSTUME: {
-							type: Scratch.ArgumentType.NUMBER
+							type: Scratch.ArgumentType.COSTUME
 						},
 						
 						X: {
@@ -40,7 +40,16 @@ class CropCostumes {
 	}
 
 	cropCostume(args) {
-		return args.COSTUME;
+		var tempCanvas = document.createElement("canvas");
+		tempCanvas.width = args.WIDTH;
+		tempCanvas.height = args.HEIGHT;
+		
+		var tempCtx = tempCanvas.getContext("2d");
+		
+		tempCtx.drawImage(args.COSTUME, 0, 0, args.WIDTH, args.HEIGHT);
+		
+		var output = tempCanvas.toDataURL();
+		return output;
 	}
 }
 
