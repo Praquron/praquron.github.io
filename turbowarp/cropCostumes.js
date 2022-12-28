@@ -1,8 +1,4 @@
 class CropCostumes {
-	constructor(runtime) {
-		this.runtime = runtime;
-	}
-
 	getInfo() {
 		return {
 			id: "cropCostumes",
@@ -13,11 +9,7 @@ class CropCostumes {
 					opcode: "cropCostume",
 					blockType: Scratch.BlockType.COMMAND,
 					
-					text: formatMessage({
-						id: "cropCostume",
-						defaultMessage: "crop [COSTUME] at x: [X], y: [Y] with width: [WIDTH], height: [HEIGHT]",
-						description: "Crop costume by origin x and y, and crop width and height."
-					}),
+					text: "crop [COSTUME] at x: [X], y: [Y] with width: [WIDTH], height: [HEIGHT]",
 					
 					arguments: {
 						COSTUME: {
@@ -26,32 +18,30 @@ class CropCostumes {
 						
 						X: {
 							type: Scratch.ArgumentType.NUMBER,
-							defaultValue: 0
+							default: 0
 						},
 						Y: {
 							type: Scratch.ArgumentType.NUMBER,
-							defaultValue: 0
+							default: 0
 						},
 						
 						WIDTH: {
 							type: Scratch.ArgumentType.NUMBER,
-							defaultValue: 50
+							default: 50
 						},
 						HEIGHT: {
 							type: Scratch.ArgumentType.NUMBER,
-							defaultValue: 50
+							default: 50
 						}
-					},
-
-					filter: [Scratch.TargetType.SPRITE]
+					}
 				}
-			],
+			]
 		};
-	};
+	}
 
 	cropCostume(args) {
-		return args.COSTUME + 1;
-	};
+		return args.COSTUME;
+	}
 }
 
-Scratch.extensions.register(new CropCostumes());
+Scratch.extensions.register(new CropCostumes);
