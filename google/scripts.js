@@ -110,8 +110,8 @@ function load(change, load) {
 	document.getElementById("doodleIndex").value = doodleI + 1;
 
 	if ((doodleI !== lastI) || load) {
-		crop(0, true);
-		trim(0, true);
+		crop(0);
+		trim(0);
 	}
 
 	document.getElementById("doodleSourceAnchor").href = doodleSource[doodleI];
