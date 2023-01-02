@@ -1,4 +1,4 @@
-const parameters = new URLSearchParams(window.location.href);
+const parameters = new URLSearchParams(window.location.search);
 
 let doodleI = 0;
 if (parameters.has("doodleI")) {
