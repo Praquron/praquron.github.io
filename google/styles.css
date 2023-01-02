@@ -228,6 +228,9 @@ span {
 
 .image {
 	display: flex;
-	flex-direction: column;
+	padding-top: 12px;
+	padding-bottom: 12px;
+	margin-left: auto;
+	margin-right: auto;
 	width: 25%;
 }
