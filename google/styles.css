@@ -225,12 +225,3 @@ span {
 .tracker {
 	color: white;
 }
-
-.image {
-	display: flex;
-	padding-top: 12px;
-	padding-bottom: 12px;
-	margin-left: auto;
-	margin-right: auto;
-	width: 25%;
-}
