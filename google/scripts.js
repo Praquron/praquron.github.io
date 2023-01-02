@@ -1,6 +1,17 @@
+const parameters = new URLSearchParams(window.location.href);
+
 let doodleI = 0;
+if (parameters.has("doodleI")) {
+	doodleI = parameters.get("doodleI");
+}
 let imageI = 0;
+if (parameters.has("imageI")) {
+	imageI = parameters.get("imageI");
+}
 let audioI = 0;
+if (parameters.has("audioI")) {
+	audioI = parameters.get("audioI");
+}
 
 let lastImageI = [];
 let lastAudioI = [];
