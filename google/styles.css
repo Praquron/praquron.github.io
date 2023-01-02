@@ -225,3 +225,8 @@ span {
 .tracker {
 	color: white;
 }
+
+.image {
+	display: flex;
+	flex-direction: column;
+}
