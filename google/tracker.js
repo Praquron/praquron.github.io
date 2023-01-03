@@ -19,7 +19,8 @@ function filter(input = "") {
 		}
 	}
 
-	for (let i = 0; i < (doodles.rows.length + 1); i++) {
+	let doodlesLength = doodles.row.length;
+	for (let i = 0; i < (doodlesLength); i++) {
 		doodles.deleteRow(-1);
 	}
 	
