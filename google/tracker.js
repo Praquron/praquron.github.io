@@ -1,6 +1,6 @@
 const decompileDates = ['1 November 2022', '1 December 2022', 'Unknown'];
 
-let search = document.getElementById("search");
+let search = document.getElementById("input");
 let doodles = document.getElementById("doodles");
 
 setupDoodles();
