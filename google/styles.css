@@ -122,6 +122,8 @@ span {
 }
 
 table {
+	width: 200px;
+	border-radius: 2px;
 	border-color: white;
 }
 
