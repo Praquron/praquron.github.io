@@ -40,27 +40,37 @@ function filter(input = "") {
 	headerValue = document.createTextNode("Date Decompiled");
 	headerCell.appendChild(headerValue);
 	
-	let row;
-	let cell;
-	let value;
-	for (let i = 0; i < filteredDoodles.length; i++) {
-		row = doodles.insertRow();
-		
-		cell = row.insertCell();
-		value = document.createElement("a");
-		value.text = doodleName[filteredDoodles[i]];
-		value.href = 'https://praquron.github.io/google?doodleI=' + i;
-		cell.appendChild(value);
-		
-		cell = row.insertCell();
-		value = document.createTextNode(doodleDate[filteredDoodles[i]]);
-		cell.appendChild(value);
-		
-		cell = row.insertCell();
-		value = document.createTextNode(decompileDates[filteredDoodles[i]]);
-		cell.appendChild(value);
-	}
+	if (filteredDoodles.length > 0) {
+		let row;
+		let cell;
+		let value;
+		for (let i = 0; i < filteredDoodles.length; i++) {
+			row = doodles.insertRow();
 
+			cell = row.insertCell();
+			value = document.createElement("a");
+			value.text = doodleName[filteredDoodles[i]];
+			value.href = 'https://praquron.github.io/google?doodleI=' + i;
+			cell.appendChild(value);
+
+			cell = row.insertCell();
+			value = document.createTextNode(doodleDate[filteredDoodles[i]]);
+			cell.appendChild(value);
+
+			cell = row.insertCell();
+			value = document.createTextNode(decompileDates[filteredDoodles[i]]);
+			cell.appendChild(value);
+		}
+	} else {
+		row = doodles.insertRow();
+
+		for (let i = 0; i < 3; i++) {
+			cell = row.insertCell();
+			value = document.createTextNode("Not Avaliable");
+			cell.appendChild(value);
+		}
+	}
+			
 	row = doodles.insertRow();
 
 	cell = row.insertCell();
