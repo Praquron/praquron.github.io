@@ -19,7 +19,7 @@ function filter(input = "") {
 		}
 	}
 
-	let doodlesLength = doodles.row.length;
+	let doodlesLength = doodles.rows.length;
 	for (let i = 0; i < (doodlesLength); i++) {
 		doodles.deleteRow(-1);
 	}
