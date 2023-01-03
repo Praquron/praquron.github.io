@@ -19,9 +19,26 @@ function filter(input = "") {
 		}
 	}
 
-	for (let i = 0; i < decompileDates.length; i++) {
+	for (let i = 0; i < (decompileDates.length + 1); i++) {
 		doodles.deleteRow(-1);
 	}
+	
+	let header = doodles.createTHead();
+	let headerRow = header.insertRow();
+	let headerCell;
+	let headerValue;
+	
+	headerCell = headerRow.insertCell();
+	headerValue = document.createTextNode("Doodle Name");
+	headerCell.appendChild(headerValue);
+	
+	headerCell = headerRow.insertCell();
+	headerValue = document.createTextNode("Date Released");
+	headerCell.appendChild(headerValue);
+	
+	headerCell = headerRow.insertCell();
+	headerValue = document.createTextNode("Date Decompiled");
+	headerCell.appendChild(headerValue);
 	
 	let row;
 	let cell;
