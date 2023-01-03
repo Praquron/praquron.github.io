@@ -5,7 +5,8 @@ let doodles = document.getElementById("doodles");
 
 filter();
 
-search.addEventListener("change", function() {
+search.addEventListener("keyup", function() {
+	console.log(search.value);
 	filter(search.value);
 });
 
@@ -16,6 +17,10 @@ function filter(input = "") {
 		if (doodleName[i].toUpperCase().indexOf(filter) > -1) {
 			filteredDoodles.push(i);
 		}
+	}
+
+	for (let i = 0; i < decompileDates.length; i++) {
+		doodles.deleteRow(-1);
 	}
 	
 	let row;
