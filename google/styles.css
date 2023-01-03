@@ -121,6 +121,10 @@ span {
 	font-family: "Poor Story";
 }
 
+table {
+	border-color: white;
+}
+
 .inputBackground {
 	position: relative;
 	max-width: 100vw;
