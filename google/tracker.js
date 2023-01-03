@@ -62,6 +62,8 @@ function filter(input = "") {
 			value = document.createTextNode(decompileDates[filteredDoodles[i]]);
 			cell.appendChild(value);
 		}
+		
+		doodles.insertRow();
 	} else {
 		row = doodles.insertRow();
 
