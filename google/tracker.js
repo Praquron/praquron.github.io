@@ -1,4 +1,4 @@
-const unde;
+const decompileDates = ['1 November 2022', '1 December 2022', 'Unknown'];
 
 let search = document.getElementById("search");
 let doodles = document.getElementById("doodles");
@@ -8,9 +8,20 @@ setupDoodles();
 function setupDoodles() {
 	let row;
 	let cell;
-	for (let i = 0; i < doodleName.length; i++) {
+	let value;
+	for (let i = 0; i < decompileDates.length; i++) {
 		row = doodles.insertRow();
+		
 		cell = doodles.insertCell();
-		let name = document.createTextNode(doodleName[i]);
-		let date;
+		value = document.createTextNode(doodleName[i]);
+		cell.appendChild(value);
+		
+		cell = doodles.insertCell();
+		value = document.createTextNode(doodleDate[i]);
+		cell.appendChild(value);
+		
+		cell = doodles.insertCell();
+		value = document.createTextNode(decompileDates[i]);
+		cell.appendChild(value);
+	}
 }
