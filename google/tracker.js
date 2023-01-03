@@ -6,7 +6,6 @@ let doodles = document.getElementById("doodles");
 filter();
 
 search.addEventListener("keyup", function() {
-	console.log(search.value);
 	filter(search.value);
 });
 
@@ -62,12 +61,6 @@ function filter(input = "") {
 			value = document.createTextNode(decompileDates[filteredDoodles[i]]);
 			cell.appendChild(value);
 		}
-		
-		row = doodles.insertRow();
-		
-		cell = row.insertCell();
-		value = document.createTextNode(" ");
-		cell.appendChild(value);
 	} else {
 		row = doodles.insertRow();
 
