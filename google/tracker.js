@@ -1,6 +1,6 @@
 const decompileDates = ['1 November 2022', '1 December 2022', 'Unknown'];
 
-let search = document.getElementById("input");
+let search = document.getElementById("searchInput");
 let doodles = document.getElementById("doodles");
 
 setupDoodles();
@@ -13,7 +13,9 @@ function setupDoodles() {
 		row = doodles.insertRow();
 		
 		cell = row.insertCell();
-		value = document.createTextNode(doodleName[i]);
+		value = document.createElement("a");
+		value.text = doodleName[i];
+		value.href = 'https://praquron.github.io/google?doodleI=' + i;
 		cell.appendChild(value);
 		
 		cell = row.insertCell();
