@@ -60,4 +60,11 @@ function filter(input = "") {
 		value = document.createTextNode(decompileDates[filteredDoodles[i]]);
 		cell.appendChild(value);
 	}
+
+	row = doodles.insertRow();
+	for (let i = 0; i < 3; i++) {
+	 	cell = row.insertCell();
+		value = document.createTextNode("        ");
+		cell.appendChild(value);
+	}
 }
