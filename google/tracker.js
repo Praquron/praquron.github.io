@@ -62,9 +62,8 @@ function filter(input = "") {
 	}
 
 	row = doodles.insertRow();
-	for (let i = 0; i < 3; i++) {
-	 	cell = row.insertCell();
-		value = document.createTextNode("                                ");
-		cell.appendChild(value);
-	}
+
+	cell = row.insertCell();
+	value = document.createTextNode("Total: " + filteredDoodles.length);
+	cell.appendChild(value);
 }
