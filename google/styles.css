@@ -122,9 +122,12 @@ span {
 }
 
 table {
-	width: 200px;
-	border-radius: 2px;
+	position: absolute;
+	transform: translate(-50%, 50%);
+	left: 50%;
+	width: 600px;
 	border-color: white;
+	outline-color: white;
 }
 
 .inputBackground {
