@@ -50,7 +50,7 @@ function filter(input = "") {
 			cell = row.insertCell();
 			value = document.createElement("a");
 			value.text = doodleName[filteredDoodles[i]];
-			value.href = 'https://praquron.github.io/google?doodleI=' + i;
+			value.href = 'https://praquron.github.io/google?doodleI=' + filteredDoodles[i];
 			cell.appendChild(value);
 
 			cell = row.insertCell();
