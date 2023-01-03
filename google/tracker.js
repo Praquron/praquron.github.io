@@ -19,7 +19,7 @@ function filter(input = "") {
 		}
 	}
 
-	for (let i = 0; i < (decompileDates.length + 1); i++) {
+	for (let i = 0; i < (doodles.rows.length + 1); i++) {
 		doodles.deleteRow(-1);
 	}
 	
