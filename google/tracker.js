@@ -12,15 +12,15 @@ function setupDoodles() {
 	for (let i = 0; i < decompileDates.length; i++) {
 		row = doodles.insertRow();
 		
-		cell = doodles.insertCell();
+		cell = row.insertCell();
 		value = document.createTextNode(doodleName[i]);
 		cell.appendChild(value);
 		
-		cell = doodles.insertCell();
+		cell = row.insertCell();
 		value = document.createTextNode(doodleDate[i]);
 		cell.appendChild(value);
 		
-		cell = doodles.insertCell();
+		cell = row.insertCell();
 		value = document.createTextNode(decompileDates[i]);
 		cell.appendChild(value);
 	}
