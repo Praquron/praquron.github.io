@@ -63,7 +63,11 @@ function filter(input = "") {
 			cell.appendChild(value);
 		}
 		
-		doodles.insertRow();
+		row = doodles.insertRow();
+		
+		cell = row.insertCell();
+		value = document.createTextNode(" ");
+		cell.appendChild(value);
 	} else {
 		row = doodles.insertRow();
 
