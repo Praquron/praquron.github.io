@@ -122,13 +122,19 @@ span {
 }
 
 table {
+	margin: 16px;
 	position: absolute;
 	transform: translateX(-50%);
 	left: 50%;
-	width: 800px;
-	min-width: 800px;
-	border-color: white;
-	outline-color: white;
+}
+table td:nth-child(1) {
+	min-width: 200px;
+}
+table td:nth-child(2) {
+	min-width: 200px;
+}
+table td:nth-child(3) {
+	min-width: 200px;
 }
 
 .inputBackground {
