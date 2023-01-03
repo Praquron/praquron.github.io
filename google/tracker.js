@@ -7,7 +7,7 @@ filter();
 
 search.addEventListener("change", function() {
 	filter(search.value);
-}
+});
 
 function filter(input = "") {
 	let filter = input.toUpperCase();
