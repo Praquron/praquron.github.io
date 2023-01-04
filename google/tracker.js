@@ -56,7 +56,7 @@ function filter(input = "") {
 			cell.appendChild(value);
 
 			cell = row.insertCell();
-			value = document.createTextNode(decompileDates[filteredDoodles[i]]);
+			value = document.createTextNode(decompileDate[filteredDoodles[i]]);
 			cell.appendChild(value);
 		}
 	} else {
