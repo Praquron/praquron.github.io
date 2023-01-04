@@ -1,18 +1,25 @@
 const parameters = new URLSearchParams(window.location.search);
 
 let doodleI = 0;
+document.getElementById("doodleIndex").value = 1;
 if (parameters.has("doodleI")) {
 	doodleI = parseInt(parameters.get("doodleI"));
+	document.getElementById("doodleIndex").value = doodleI + 1;
 }
 let imageI = 0;
+document.getElementById("imageIndex").value = 1;
 if (parameters.has("imageI")) {
 	imageI = parseInt(parameters.get("imageI"));
+	document.getElementById("imageIndex").value = imageI + 1;
 }
 let audioI = 0;
+document.getElementById("audioIndex").value = 1;
 if (parameters.has("audioI")) {
 	audioI = parseInt(parameters.get("audioI"));
+	document.getElementById("audioIndex").value = audioI + 1;
 }
 
+let lastDoodleI = 0;
 let lastImageI = [];
 let lastAudioI = [];
 for (let i = 0; i < imageSource.length; i++) {
@@ -20,11 +27,7 @@ for (let i = 0; i < imageSource.length; i++) {
 	lastAudioI.push("Not Avaliable");
 }
 
-if (doodleI === 0) {
-	load(0, true);
-} else {
-	load(0, true, doodleI);
-}
+load(0, true);
 
 const previousDoodleButton = document.querySelector("button.previousDoodle");
 previousDoodleButton.addEventListener("click", function () {
@@ -113,22 +116,23 @@ function checkAudioI(change) {
 	}
 }
 
-function load(change, load, force) {
-	if (force !== undefined) {
-		doodleI = force;
-	} else {	
-		if (document.getElementById("doodleIndex").value > 0) {
-			doodleI = Math.floor(document.getElementById("doodleIndex").value) - 1;
-		} else {
-			doodleI = 0;
-		}
+function load(change, load) {	
+	if (load) {
+		doodleI = Math.floor(document.getElementById("doodleIndex").value) - 1;
+	} else {
+		doodleI = 0;
 	}
+	
 	lastI = doodleI;
 	checkDoodleI(change);
 	
+	lastDoodleI = doodleI;
 	document.getElementById("doodleIndex").value = doodleI + 1;
 
-	if ((doodleI !== lastI) || load) {
+	if (load) {
+		crop(0, true);
+		trim(0, true);
+	} else if (doodleI !== lastI) {
 		crop(0);
 		trim(0);
 	}
