@@ -1,5 +1,3 @@
-const decompileDates = ['20 December 2022', '23 December 2022', '4 January 2023', '1 January 2023', '21 December 2022', '1 January 2023', '19 December 2022', '1 November 2022', '1 December 2022'];
-
 let search = document.getElementById("searchInput");
 let doodles = document.getElementById("doodles");
 
