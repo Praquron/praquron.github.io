@@ -27,7 +27,7 @@ for (let i = 0; i < imageSource.length; i++) {
 	lastAudioI.push("Not Avaliable");
 }
 
-load(0, true);
+load(0);
 
 const previousDoodleButton = document.querySelector("button.previousDoodle");
 previousDoodleButton.addEventListener("click", function () {
@@ -122,7 +122,8 @@ function load(change, load) {
 	} else {
 		doodleI = lastDoodleI;
 	}
-	
+
+	console.log(lastDoodleI);
 	lastI = doodleI;
 	checkDoodleI(change);
 	
@@ -132,11 +133,13 @@ function load(change, load) {
 	if (load) {
 		crop(0, true);
 		trim(0, true);
-	} else if (doodleI !== lastI) {
-		crop(0);
-		trim(0);
+	} else {
+		crop(1);
+		crop(-1);
+		trim(1);
+		trim(-1);
 	}
-
+	
 	document.getElementById("doodleSourceAnchor").href = doodleSource[doodleI];
 	document.getElementById("doodleSource").innerHTML = doodleName[doodleI];
 	document.getElementById("doodleDate").innerHTML = doodleDate[doodleI];
