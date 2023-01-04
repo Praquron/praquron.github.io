@@ -120,7 +120,7 @@ function load(change, load) {
 	if (load) {
 		doodleI = Math.floor(document.getElementById("doodleIndex").value) - 1;
 	} else {
-		doodleI = 0;
+		doodleI = lastDoodleI;
 	}
 	
 	lastI = doodleI;
